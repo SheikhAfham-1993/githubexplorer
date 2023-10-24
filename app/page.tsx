@@ -9,7 +9,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-start">
       <Header />
       <Navigation />
-      <div className="grid grid-cols-1 md:grid-cols-12 w-full px-4 md:px-20 h-full">
+      <div className="grid grid-cols-1 md:grid-cols-12 w-full px-4 md:px-16 xl:px-56 h-full">
         <div className="col-span-3">
           <ProfileDescription />
         </div>

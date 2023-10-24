@@ -1,7 +1,7 @@
-import Description from './Description'
-import Tag from './Tag'
-import Title from './Title'
-import UpdatedAt from './UpdatedAt'
+import Title from '@/ui/Repository/Title'
+import Description from '@/ui/Repository/Description'
+import Tag from '@/ui/Repository/Tag'
+import UpdatedAt from '@/ui/Repository/UpdatedAt'
 
 const Card = () => {
   return (
