@@ -1,6 +1,12 @@
+import { fetchRepo } from '@/util/fetchRepo'
 import Card from '../UI/Card'
+import { useState } from 'react'
+import { IRepo } from '@/Interface/IRepo'
 
-const Repositories = () => {
+type Props = {
+  repoData: IRepo
+}
+const Repositories: React.FC<Props> = ({ repoData }) => {
   return (
     <div className="flex-1">
       <div className="border-b border-b-gray-300  pb-5">
