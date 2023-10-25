@@ -1,7 +1,7 @@
 const Name = () => {
   return (
-    <div className="flex flex-col items-start">
-      <span className="text-3xl font-semibold">Afham</span>
+    <div className="flex flex-col w-fit items-start">
+      <span className="text-2xl font-semibold">Afham</span>
       <span className="text-xl">SheikhAfham-1993</span>
     </div>
   )
