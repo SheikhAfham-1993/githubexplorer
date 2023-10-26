@@ -4,10 +4,17 @@ import Name from '@/components/UI/Name'
 import Avatar from '@/components/UI/avatar'
 
 type Props = {
+  /** The data of the owner. */
   ownerData: IOwner | undefined
 }
 
-const ProfileDescription: React.FC<Props> = ({ ownerData }) => {
+/**
+ * Renders the profile description component.
+ *
+ * @param {Props} ownerData - The data of the owner.
+ * @return {React.JSX.Element} The rendered profile description component.
+ */
+const ProfileDescription = ({ ownerData }: Props): React.JSX.Element => {
   return (
     <div className="flex-none py-5 px-4 space-y-4 w-full md:w-[300px] lg:w-[400px]">
       <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 space-y-0 md:space-y-4">

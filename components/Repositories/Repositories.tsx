@@ -1,11 +1,21 @@
+'use client'
+
 import Card from '../UI/Card'
 import { useState, useEffect } from 'react'
 import { IRepo } from '@/Interface/IRepo'
 
 type Props = {
+  /** The data for the repositories. */
   repoData: IRepo[] | undefined
 }
-const Repositories: React.FC<Props> = ({ repoData }) => {
+
+/**
+ * Renders a list of repositories.
+ *
+ * @param {Props} repoData - The data for the repositories.
+ * @return {React.JSX.Element} The rendered list of repositories.
+ */
+const Repositories = ({ repoData }: Props): React.JSX.Element => {
   const [tempdata, setTempData] = useState<IRepo[] | undefined>(undefined)
 
   useEffect(() => {

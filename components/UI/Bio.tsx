@@ -1,7 +1,14 @@
 type Props = {
+  /** The description of the owner if not provided then defaults to 'No bio available'. */
   ownerBio?: string
 }
-const Bio: React.FC<Props> = ({ ownerBio }) => {
+/**
+ * Renders a paragraph element with the owner's bio.
+ *
+ * @param {Props} ownerBio - The owner's bio.
+ * @return {React.JSX.Element} The rendered paragraph element.
+ */
+const Bio = ({ ownerBio }: Props): React.JSX.Element => {
   return <p className="w-full">{ownerBio ?? 'No bio available'}</p>
 }
 

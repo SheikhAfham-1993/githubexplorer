@@ -1,14 +1,22 @@
+'use client'
+
 import {
   BookmarkSquareIcon,
   MagnifyingGlassIcon,
 } from '@heroicons/react/24/outline'
 import Button from './UI/Button'
 import { useState } from 'react'
-
 import useStore from '@/store/global'
 import { IOwner } from '@/Interface/IOwner'
 import { fetchOwner, fetchRepo } from '@/util/fetchRepo'
-const fetchOwnerData = async (repoName: string) => {
+
+/**
+ * Fetches owner data for a given repository name.
+ *
+ * @param {string} repoName - The name of the repository.
+ * @return {Promise<void>} - A Promise that resolves when the owner data and repository data have been fetched and set.
+ */
+const fetchOwnerData = async (repoName: string): Promise<void> => {
   const { setOwnerData, setRepoData } = useStore.getState()
   let ownerRepoData: IOwner | undefined = await fetchOwner(
     `https://api.github.com/users/${repoName}`
@@ -22,7 +30,12 @@ const fetchOwnerData = async (repoName: string) => {
   }
 }
 
-const Navigation = () => {
+/**
+ * Renders the navigation component.
+ *
+ * @return {React.JSX.Element} The rendered navigation component.
+ */
+const Navigation = (): React.JSX.Element => {
   const [repoName, setRepoName] = useState<string>('')
   return (
     <div className="bg-[#f6f8fa] w-full h-12 flex flex-row items-center px-5 space-x-2 shadow-md">

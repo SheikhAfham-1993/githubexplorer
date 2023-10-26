@@ -1,9 +1,17 @@
 import Image from 'next/image'
 
 type Props = {
+  /** The URL of the avatar image to render. */
   ownerAvatar: string | undefined
 }
-const Avatar: React.FC<Props> = ({ ownerAvatar }) => {
+
+/**
+ * Renders an avatar image based on the provided ownerAvatar prop.
+ *
+ * @param {Props} ownerAvatar - The URL of the avatar image to render. If not provided, a default avatar image will be used.
+ * @return {React.JSX.Element} The rendered avatar image component.
+ */
+const Avatar = ({ ownerAvatar }: Props): React.JSX.Element => {
   return (
     <Image
       src={ownerAvatar ?? '/avatar.svg'}

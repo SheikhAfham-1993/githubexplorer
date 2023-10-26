@@ -1,10 +1,16 @@
+'use client'
 import Header from '@/components/Header'
 import Navigation from '@/components/Navigation'
 import ProfileDescription from '@/components/Bio/ProfileDescription'
 import Repositories from '@/components/Repositories/Repositories'
 import useStore from '@/store/global'
 
-const Dashboard = () => {
+/**
+ * Renders the Dashboard component.
+ *
+ * @returns {React.JSX.Element} The rendered Dashboard component.
+ */
+const Dashboard = (): React.JSX.Element => {
   const { ownerData, repoData } = useStore()
   return (
     <>

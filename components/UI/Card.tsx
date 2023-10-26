@@ -5,9 +5,17 @@ import UpdatedAt from '@/components/UI/UpdatedAt'
 import { IRepo } from '@/Interface/IRepo'
 
 type Props = {
+  /** The repository object containing information about the repo. */
   repo: IRepo
 }
-const Card: React.FC<Props> = ({ repo }) => {
+
+/**
+ * Renders a card component for a given repository.
+ *
+ * @param {Props} repo - The repository object containing information about the repo.
+ * @return {React.JSX.Element} - The rendered card component.
+ */
+const Card = ({ repo }: Props): React.JSX.Element => {
   return (
     <div className="border-b border-b-gray-300 flex flex-col h-32 py-4">
       <div className="flex flex-row items-center space-x-4">

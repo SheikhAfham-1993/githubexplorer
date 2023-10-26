@@ -1,6 +1,11 @@
 import GithubLogo from '@/svg/GithubLogo'
-
-const Header = () => {
+import React from 'react'
+/**
+ * Renders the header component.
+ *
+ * @return {React.JSX.Element} The rendered header component.
+ */
+const Header = (): React.JSX.Element => {
   return (
     <div className="bg-[#f6f8fa] w-full h-12 flex flex-row items-center px-5 space-x-2">
       <GithubLogo />
