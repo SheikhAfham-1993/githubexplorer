@@ -16,15 +16,16 @@ export const fetchOwner = async (url: string): Promise<IOwner | undefined> => {
   }
 }
 
-export const fetchRepo = async (url: string): Promise<IRepo | undefined> => {
-  let repoData: IRepo | undefined
+export const fetchRepo = async (url: string): Promise<IRepo[]> => {
+  let repoData: IRepo[]
+  repoData = []
   try {
     const res = await axios.get(url)
     if (res && res.status === 200) {
       repoData = res.data
     }
   } catch (error) {
-    repoData = undefined
+    repoData = []
   } finally {
     return repoData
   }

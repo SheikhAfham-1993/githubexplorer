@@ -1,6 +1,29 @@
-import { BookmarkSquareIcon } from '@heroicons/react/24/outline'
+import {
+  BookmarkSquareIcon,
+  MagnifyingGlassIcon,
+} from '@heroicons/react/24/outline'
+import Button from './UI/Button'
+import { useState } from 'react'
+
+import useStore from '@/store/global'
+import { IOwner } from '@/Interface/IOwner'
+import { fetchOwner, fetchRepo } from '@/util/fetchRepo'
+const fetchOwnerData = async (repoName: string) => {
+  const { setOwnerData, setRepoData } = useStore.getState()
+  let ownerRepoData: IOwner | undefined = await fetchOwner(
+    `https://api.github.com/users/${repoName}`
+  )
+  if (ownerRepoData) {
+    setOwnerData(ownerRepoData)
+    if (ownerRepoData.repos_url) {
+      let repo = await fetchRepo(ownerRepoData.repos_url)
+      setRepoData(repo)
+    }
+  }
+}
 
 const Navigation = () => {
+  const [repoName, setRepoName] = useState<string>('')
   return (
     <div className="bg-[#f6f8fa] w-full h-12 flex flex-row items-center px-5 space-x-2 shadow-md">
       <nav className="">
@@ -9,6 +32,21 @@ const Navigation = () => {
           <span className="text-sm  py-1 rounded-lg">Repositories</span>
         </div>
       </nav>
+      <div className="w-full flex flex-row items-center p-5 space-x-2">
+        <input
+          onChange={(e) => setRepoName(e.target.value)}
+          type="text"
+          placeholder="Type repository name"
+          className="w-full md:w-1/4 border border-gray-400 py-1 px-3 rounded-lg placeholder:text-sm text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"
+        />
+        <Button
+          onClick={() => fetchOwnerData(repoName)}
+          disabled={repoName === ''}
+          classNames="bg-green-600 disabled:bg-green-600/50 px-3 py-1 rounded-lg text-white text-sm font-semibold flex items-center"
+        >
+          <MagnifyingGlassIcon className="h-5 w-5" /> Search
+        </Button>
+      </div>
     </div>
   )
 }

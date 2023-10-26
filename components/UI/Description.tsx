@@ -1,8 +1,10 @@
-const Description = () => {
+type Props = {
+  description?: string
+}
+
+const Description: React.FC<Props> = ({ description }) => {
   return (
-    <div className="text-sm">
-      Next js application to explore the repositories of a user
-    </div>
+    <div className="text-sm max-w-2xl whitespace-pre-wrap">{description}</div>
   )
 }
 
