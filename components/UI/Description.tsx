@@ -10,9 +10,7 @@ type Props = {
  * @returns {React.JSX.Element} A React element representing the description component.
  */
 const Description = ({ description }: Props): React.JSX.Element => {
-  return (
-    <div className="text-sm max-w-2xl whitespace-pre-wrap">{description}</div>
-  )
+  return <div className="text-sm max-w-2xl line-clamp-3">{description}</div>
 }
 
 export default Description

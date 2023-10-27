@@ -38,14 +38,16 @@ const fetchOwnerData = async (repoName: string): Promise<void> => {
 const Navigation = (): React.JSX.Element => {
   const [repoName, setRepoName] = useState<string>('')
   return (
-    <div className="bg-[#f6f8fa] w-full h-12 flex flex-row items-center px-5 space-x-2 shadow-md">
-      <nav className="">
-        <div className="cursor-pointer flex items-center space-x-1 border-b-2 border-b-orange-300 hover:bg-gray-200 px-2 py-1 rounded-t-lg">
-          <BookmarkSquareIcon className="w-5 h-5" />
-          <span className="text-sm  py-1 rounded-lg">Repositories</span>
+    <div className="bg-[#f6f8fa] w-full h-12 flex flex-row items-center px-5 space-x-4 shadow-md">
+      <nav>
+        <div className="cursor-pointer border-b-2 border-b-orange-300">
+          <div className=" mb-1 flex items-center space-x-1 hover:bg-gray-200 rounded-lg px-2">
+            <BookmarkSquareIcon className="w-5 h-5" />
+            <span className="text-sm  py-1 rounded-lg">Repositories</span>
+          </div>
         </div>
       </nav>
-      <div className="w-full flex flex-row items-center p-5 space-x-2">
+      <div className="w-full flex flex-row items-center space-x-2">
         <input
           onChange={(e) => setRepoName(e.target.value)}
           type="text"

@@ -17,13 +17,13 @@ type Props = {
  */
 const Card = ({ repo }: Props): React.JSX.Element => {
   return (
-    <div className="border-b border-b-gray-300 flex flex-col h-32 py-4">
+    <div className="border-b border-b-gray-300 flex flex-col min-h-32 py-4">
       <div className="flex flex-row items-center space-x-4">
         <Title title={repo?.name} />
         <Tag tag={repo.visibility} />
       </div>
       <Description description={repo.description} />
-      <div className="flex-1 items-end">
+      <div className="flex-1 items-end pt-3">
         <UpdatedAt updated={repo.updated_at} />
       </div>
     </div>

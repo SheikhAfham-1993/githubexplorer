@@ -9,7 +9,7 @@ type Props = {
  * @return {React.JSX.Element} The rendered paragraph element.
  */
 const Bio = ({ ownerBio }: Props): React.JSX.Element => {
-  return <p className="w-full">{ownerBio ?? 'No bio available'}</p>
+  return <p className="w-full md:w-[300px]">{ownerBio ?? 'No bio available'}</p>
 }
 
 export default Bio
