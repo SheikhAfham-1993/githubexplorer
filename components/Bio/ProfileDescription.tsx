@@ -1,6 +1,6 @@
-import { IUserData } from '@/Interface/IOwner'
-import Name from '@/components/UI/Name'
-import Avatar from '@/components/UI/avatar'
+import { IUserData } from '../../Interface/IOwner'
+import Name from '../UI/Name'
+import Avatar from '..//UI/avatar'
 import Label from '../UI/Label'
 import SocialLinks from '../UI/SocialLinks'
 

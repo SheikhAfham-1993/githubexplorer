@@ -4,7 +4,7 @@ import Card from '../UI/Card'
 import { useState, useEffect, useRef } from 'react'
 import Label from '../UI/Label'
 import SearchResult from './SearchResult'
-import { IRepositories, IUserData } from '@/Interface/IOwner'
+import { IRepositories, IUserData } from '../../Interface/IOwner'
 
 type Props = {
   /** The data for the repositories. */

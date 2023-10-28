@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { returnQuery } from './queries'
-import useStore from '@/store/global'
+import useStore from '../store/global'
 
 /**
  * Fetches the owner's data from the GitHub API using GraphQL.

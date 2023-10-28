@@ -1,10 +1,10 @@
 'use client'
-import Header from '@/components/Header'
-import Navigation from '@/components/Navigation'
-import ProfileDescription from '@/components/Bio/ProfileDescription'
-import Repositories from '@/components/Repositories/Repositories'
+import Header from '../../components/Header'
+import Navigation from '../../components/Navigation'
+import ProfileDescription from '../../components/Bio/ProfileDescription'
+import Repositories from '../../components/Repositories/Repositories'
 import Label from '../UI/Label'
-import { IUserData } from '@/Interface/IOwner'
+import { IUserData } from '../../Interface/IOwner'
 
 type Props = {
   userData: IUserData | undefined

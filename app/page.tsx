@@ -1,6 +1,6 @@
 'use client'
-import Dashboard from '@/components/Main/Dashboard'
-import useStore from '@/store/global'
+import Dashboard from '../components/Main/Dashboard'
+import useStore from '../store/global'
 
 /**
  * Renders the Home component.

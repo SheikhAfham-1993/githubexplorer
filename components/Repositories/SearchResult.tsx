@@ -1,6 +1,6 @@
 import XMarkIcon from '@heroicons/react/20/solid/esm/XMarkIcon'
 import Label from '../UI/Label'
-import { IRepositories } from '@/Interface/IOwner'
+import { IRepositories } from '../../Interface/IOwner'
 
 type Props = {
   /** The data to be rendered in the component. */

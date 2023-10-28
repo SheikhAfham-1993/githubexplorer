@@ -6,7 +6,7 @@ import {
 } from '@heroicons/react/24/outline'
 import Button from './UI/Button'
 import { useState } from 'react'
-import { fetchOwnerGraphql } from '@/util/fetchRepo'
+import { fetchOwnerGraphql } from '../util/fetchRepo'
 
 /**
  * Renders the navigation component.

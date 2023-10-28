@@ -1,6 +1,6 @@
-import UpdatedAt from '@/components/UI/UpdatedAt'
+import UpdatedAt from './UpdatedAt'
 import Label from './Label'
-import { IRepositories } from '@/Interface/IOwner'
+import { IRepositories } from '../../Interface/IOwner'
 import Link from 'next/link'
 
 type Props = {
