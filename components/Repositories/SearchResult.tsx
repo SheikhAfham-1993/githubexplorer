@@ -1,10 +1,10 @@
 import XMarkIcon from '@heroicons/react/20/solid/esm/XMarkIcon'
 import Label from '../UI/Label'
-import { IRepo } from '@/Interface/IRepo'
+import { IRepositories } from '@/Interface/IOwner'
 
 type Props = {
   /** The data to be rendered in the component. */
-  tempdata: IRepo[] | undefined
+  tempdata: IRepositories[] | undefined
   /** The handler function for clearing the filter. */
   clearFilterHandler: () => void
 }
