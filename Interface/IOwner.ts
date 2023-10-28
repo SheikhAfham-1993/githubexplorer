@@ -15,7 +15,7 @@ export interface IRepositories extends IName {
   description?: string
   visibility: string
   languages?: {
-    nodes?: ILanguages[]
+    nodes: ILanguages[]
   }
 }
 export interface IUserData extends IName {

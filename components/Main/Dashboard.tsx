@@ -21,7 +21,7 @@ const Dashboard = ({ userData }: Props): React.JSX.Element => {
       <Header />
       <Navigation />
       <div className="flex justify-center w-full px-4 py-5">
-        <div className="flex flex-col md:flex-row justify-center min-w-full md:min-w-[800px] lg:min-w-[1000px] xl:min-w-[1280px]">
+        <div className="flex flex-col md:flex-row justify-center min-w-full md:min-w-[600px] lg:min-w-[1000px] xl:min-w-[1280px]">
           {userData && (
             <>
               <ProfileDescription userData={userData} />

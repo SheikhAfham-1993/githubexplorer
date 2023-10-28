@@ -59,8 +59,8 @@ const Repositories = ({ userData }: Props): React.JSX.Element => {
           )}
           {tempdata?.length > 0 && (
             <div className="pb-5">
-              {tempdata.map((repo) => (
-                <Card key={repo.name} repo={repo} />
+              {tempdata.map((repo, index) => (
+                <Card key={index} repo={repo} />
               ))}
             </div>
           )}

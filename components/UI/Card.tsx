@@ -37,13 +37,15 @@ const Card = ({ repo }: Props): React.JSX.Element => {
 
       <div className="flex-1 items-end pt-5">
         <div className="flex flex-row items-center space-x-4">
-          <div className="flex flex-row items-center space-x-1">
-            <div className="w-3 h-3 bg-yellow-600 rounded-full">&nbsp;</div>
-            <Label
-              className="text-xs text-gray-600"
-              text={repo.languages?.nodes?.[0]?.name}
-            />
-          </div>
+          {repo.languages?.nodes && repo.languages?.nodes.length > 0 && (
+            <div className="flex flex-row items-center space-x-1">
+              <div className="w-3 h-3 bg-yellow-600 rounded-full">&nbsp;</div>
+              <Label
+                className="text-xs text-gray-600"
+                text={repo.languages?.nodes[0]?.name}
+              />
+            </div>
+          )}
 
           <UpdatedAt updated={repo.pushedAt} />
         </div>

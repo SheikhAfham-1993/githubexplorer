@@ -2,7 +2,6 @@ import { IUserData } from '@/Interface/IOwner'
 import Name from '@/components/UI/Name'
 import Avatar from '@/components/UI/avatar'
 import Label from '../UI/Label'
-import SocialIcons from '../UI/SocialIcons'
 import SocialLinks from '../UI/SocialLinks'
 
 type Props = {
@@ -25,7 +24,9 @@ const ProfileDescription = ({ userData }: Props): React.JSX.Element => {
         </div>
         <Name ownerName={userData?.name} ownerLogin={userData?.login} />
       </div>
-      <Label className="w-full md:w-[300px]" text={userData?.bio} />
+      <div className="pt-1">
+        <Label className="w-full md:w-[300px]" text={userData?.bio} />
+      </div>
 
       <div className="flex flex-col space-y-1">
         {userData?.location && (
