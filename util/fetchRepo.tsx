@@ -1,41 +1,41 @@
-import { IOwner } from '@/Interface/IOwner'
-import { IRepo } from '@/Interface/IRepo'
+import { IUserData } from '@/Interface/IOwner'
+// import { IRepo } from '@/Interface/IRepo'
 import axios from 'axios'
 import { returnQuery } from './queries'
 
-export const fetchOwner = async (url: string): Promise<IOwner | undefined> => {
-  let ownerData: IOwner | undefined
-  try {
-    const res = await axios.get(url)
-    if (res && res.status === 200) {
-      ownerData = res.data
-    }
-  } catch (error) {
-    ownerData = undefined
-  } finally {
-    return ownerData
-  }
-}
+// export const fetchOwner = async (url: string): Promise<IOwner | undefined> => {
+//   let ownerData: IOwner | undefined
+//   try {
+//     const res = await axios.get(url)
+//     if (res && res.status === 200) {
+//       ownerData = res.data
+//     }
+//   } catch (error) {
+//     ownerData = undefined
+//   } finally {
+//     return ownerData
+//   }
+// }
 
-export const fetchRepo = async (url: string): Promise<IRepo[]> => {
-  let repoData: IRepo[]
-  repoData = []
-  try {
-    const res = await axios.get(url)
-    if (res && res.status === 200) {
-      repoData = res.data
-    }
-  } catch (error) {
-    repoData = []
-  } finally {
-    return repoData
-  }
-}
+// export const fetchRepo = async (url: string): Promise<IRepo[]> => {
+//   let repoData: IRepo[]
+//   repoData = []
+//   try {
+//     const res = await axios.get(url)
+//     if (res && res.status === 200) {
+//       repoData = res.data
+//     }
+//   } catch (error) {
+//     repoData = []
+//   } finally {
+//     return repoData
+//   }
+// }
 
 export const fetchOwnerGraphql = async (
   userName: string
-): Promise<IOwner | undefined> => {
-  let ownerData: IOwner | undefined
+): Promise<IUserData | undefined> => {
+  let ownerData: IUserData | undefined
   try {
     const res = await axios.post(
       `https://api.github.com/graphql`,
@@ -50,10 +50,9 @@ export const fetchOwnerGraphql = async (
       }
     )
 
-    console.log({ res })
-    // if (res && res.status === 200) {
-    //   ownerData = res.data
-    // }
+    if (res && res.status === 200) {
+      ownerData = res.data.data.user
+    }
   } catch (error) {
     ownerData = undefined
   } finally {

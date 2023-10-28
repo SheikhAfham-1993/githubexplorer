@@ -12,8 +12,8 @@ type Props = {
  * @return {React.JSX.Element} - The rendered label component.
  */
 
-const Label = ({ className, text = '--' }: Props): React.JSX.Element => {
-  return <span className={className}>{text ?? '--'}</span>
+const Label = ({ className, text }: Props): React.JSX.Element => {
+  return text ? <span className={className}>{text}</span> : <></>
 }
 
 export default Label

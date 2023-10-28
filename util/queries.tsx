@@ -9,17 +9,18 @@ query {
     socialAccounts(first:100) {
       nodes{
         provider
-        url
+        displayName
       }
     }
     location
     company
     repositories(first:100) {
       nodes {
-        updatedAt
+        pushedAt
         name
         url
         visibility
+        description
         languages(first: 100) {
           nodes {
             name

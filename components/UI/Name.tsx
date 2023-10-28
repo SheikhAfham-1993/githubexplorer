@@ -1,3 +1,5 @@
+import Label from './Label'
+
 type Props = {
   /** The git user id of the owner. */
   ownerName?: string
@@ -14,10 +16,8 @@ type Props = {
 const Name = ({ ownerLogin, ownerName }: Props): React.JSX.Element => {
   return (
     <div className="flex flex-col w-fit items-start">
-      <span className="text-2xl font-semibold">
-        {ownerName ?? 'No name available'}
-      </span>
-      <span className="text-xl">{ownerLogin ?? 'No name available'}</span>
+      <Label className="text-2xl font-semibold" text={ownerName} />
+      <Label className="text-xl" text={ownerLogin} />
     </div>
   )
 }
