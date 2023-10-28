@@ -8,7 +8,7 @@ import Button from './UI/Button'
 import { useEffect, useState } from 'react'
 import useStore from '@/store/global'
 import { IOwner } from '@/Interface/IOwner'
-import { fetchOwner, fetchRepo } from '@/util/fetchRepo'
+import { fetchOwner, fetchOwnerGraphql, fetchRepo } from '@/util/fetchRepo'
 
 /**
  * Fetches owner data for a given repository name.
@@ -21,6 +21,20 @@ const fetchOwnerData = async (repoName: string): Promise<void> => {
   let ownerRepoData: IOwner | undefined = await fetchOwner(
     `https://api.github.com/users/${repoName}`
   )
+
+  // fetchOwnerDataGraphql(repoName)
+  setOwnerData(ownerRepoData)
+  if (ownerRepoData?.repos_url) {
+    let repo = await fetchRepo(ownerRepoData.repos_url)
+    setRepoData(repo)
+  } else {
+    setRepoData([])
+  }
+}
+
+const fetchOwnerDataGraphql = async (repoName: string): Promise<void> => {
+  const { setOwnerData, setRepoData } = useStore.getState()
+  let ownerRepoData: IOwner | undefined = await fetchOwnerGraphql(repoName)
 
   setOwnerData(ownerRepoData)
   if (ownerRepoData?.repos_url) {
