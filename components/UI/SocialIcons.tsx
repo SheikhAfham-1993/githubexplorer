@@ -12,7 +12,7 @@ const SocialIcons = ({ icon }: Props): React.JSX.Element => {
       iconSvg = '/youtube.svg'
       break
     case 'LINKEDIN':
-      iconSvg = '/linkedin.svg'
+      iconSvg = '/linkedIn.svg'
       break
     case 'WEBSITE':
       iconSvg = '/website.svg'
