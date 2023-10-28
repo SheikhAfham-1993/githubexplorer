@@ -5,7 +5,7 @@ import {
   MagnifyingGlassIcon,
 } from '@heroicons/react/24/outline'
 import Button from './UI/Button'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import useStore from '@/store/global'
 import { IOwner } from '@/Interface/IOwner'
 import { fetchOwner, fetchRepo } from '@/util/fetchRepo'
@@ -21,12 +21,13 @@ const fetchOwnerData = async (repoName: string): Promise<void> => {
   let ownerRepoData: IOwner | undefined = await fetchOwner(
     `https://api.github.com/users/${repoName}`
   )
-  if (ownerRepoData) {
-    setOwnerData(ownerRepoData)
-    if (ownerRepoData.repos_url) {
-      let repo = await fetchRepo(ownerRepoData.repos_url)
-      setRepoData(repo)
-    }
+
+  setOwnerData(ownerRepoData)
+  if (ownerRepoData?.repos_url) {
+    let repo = await fetchRepo(ownerRepoData.repos_url)
+    setRepoData(repo)
+  } else {
+    setRepoData([])
   }
 }
 
@@ -37,6 +38,12 @@ const fetchOwnerData = async (repoName: string): Promise<void> => {
  */
 const Navigation = (): React.JSX.Element => {
   const [repoName, setRepoName] = useState<string>('')
+
+  // useEffect(() => {
+  //   fetchOwnerData('sheikhafham-1993')
+  // }, [])
+
+  // fetchOwnerData('sheikhafham-1993')
   return (
     <div className="bg-[#f6f8fa] w-full h-12 flex flex-row items-center px-5 space-x-4 shadow-md">
       <nav>
@@ -49,7 +56,13 @@ const Navigation = (): React.JSX.Element => {
       </nav>
       <div className="w-full flex flex-row items-center space-x-2">
         <input
+          defaultValue={repoName}
           onChange={(e) => setRepoName(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              fetchOwnerData(repoName)
+            }
+          }}
           type="text"
           placeholder="Type repository name"
           className="w-full md:w-1/4 border border-gray-400 py-1 px-3 rounded-lg placeholder:text-sm text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"

@@ -19,7 +19,7 @@ const Dashboard = (): React.JSX.Element => {
       <div className="flex justify-center w-full px-4 py-5">
         <div className="flex flex-col md:flex-row justify-center  xl:min-w-[1280px]">
           <ProfileDescription ownerData={ownerData} />
-          <Repositories repoData={repoData} />
+          <Repositories repoData={repoData} ownerName={ownerData?.name} />
         </div>
       </div>
     </>

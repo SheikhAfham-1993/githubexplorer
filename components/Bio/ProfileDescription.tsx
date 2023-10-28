@@ -1,7 +1,7 @@
 import { IOwner } from '@/Interface/IOwner'
-import Bio from '@/components/UI/Bio'
 import Name from '@/components/UI/Name'
 import Avatar from '@/components/UI/avatar'
+import Label from '../UI/Label'
 
 type Props = {
   /** The data of the owner. */
@@ -23,7 +23,7 @@ const ProfileDescription = ({ ownerData }: Props): React.JSX.Element => {
         </div>
         <Name ownerName={ownerData?.name} ownerLogin={ownerData?.login} />
       </div>
-      <Bio ownerBio={ownerData?.bio} />
+      <Label className="w-full md:w-[300px]" text={ownerData?.bio} />
     </div>
   )
 }

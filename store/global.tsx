@@ -3,15 +3,15 @@ import { IRepo } from '@/Interface/IRepo'
 import { create } from 'zustand'
 
 type Repository = {
-  ownerData: IOwner
+  ownerData: IOwner | undefined
   repoData: IRepo[]
-  setOwnerData: (ownerData: IOwner) => void
+  setOwnerData: (ownerData: IOwner | undefined) => void
   setRepoData: (repoData: IRepo[]) => void
 }
 let useStore = create<Repository>((set) => ({
-  ownerData: {},
+  ownerData: undefined,
   repoData: [],
-  setOwnerData: (ownerData: IOwner) => set({ ownerData }),
+  setOwnerData: (ownerData: IOwner | undefined) => set({ ownerData }),
   setRepoData: (repoData: IRepo[]) => set({ repoData }),
 }))
 

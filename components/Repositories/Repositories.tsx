@@ -1,12 +1,16 @@
 'use client'
 
 import Card from '../UI/Card'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { IRepo } from '@/Interface/IRepo'
+import XMarkIcon from '@heroicons/react/20/solid/esm/XMarkIcon'
+import Label from '../UI/Label'
+import SearchResult from './SearchResult'
 
 type Props = {
   /** The data for the repositories. */
-  repoData: IRepo[] | undefined
+  repoData: IRepo[]
+  ownerName: string | undefined
 }
 
 /**
@@ -15,11 +19,11 @@ type Props = {
  * @param {Props} repoData - The data for the repositories.
  * @return {React.JSX.Element} The rendered list of repositories.
  */
-const Repositories = ({ repoData }: Props): React.JSX.Element => {
-  const [tempdata, setTempData] = useState<IRepo[] | undefined>(undefined)
+const Repositories = ({ repoData, ownerName }: Props): React.JSX.Element => {
+  const filterRef = useRef<HTMLInputElement>(null)
+  const [tempdata, setTempData] = useState<IRepo[]>([])
 
   useEffect(() => {
-    if (!repoData) return
     setTempData(repoData)
   }, [repoData])
 
@@ -27,6 +31,7 @@ const Repositories = ({ repoData }: Props): React.JSX.Element => {
     <div className="flex-1">
       <div className="border-b border-b-gray-300  pb-5">
         <input
+          ref={filterRef}
           onChange={(e) => {
             setTempData(
               repoData?.filter((repo) => repo.name?.includes(e.target.value))
@@ -37,11 +42,32 @@ const Repositories = ({ repoData }: Props): React.JSX.Element => {
           placeholder="Find a repository"
         />
       </div>
-
-      <div className="pb-5">
-        {tempdata &&
-          tempdata.map((repo) => <Card key={repo.name} repo={repo} />)}
-      </div>
+      {filterRef.current?.value && (
+        <SearchResult
+          tempdata={tempdata}
+          clearFilterHandler={() => {
+            if (filterRef.current) filterRef.current.value = ''
+            setTempData(repoData)
+          }}
+        />
+      )}
+      {tempdata?.length > 0 && (
+        <div className="pb-5">
+          {tempdata.map((repo) => (
+            <Card key={repo.name} repo={repo} />
+          ))}
+        </div>
+      )}
+      {tempdata?.length === 0 && (
+        <Label
+          className="pb-5 text-lg font-bold flex flex-col justify-center items-center text-black flex-grow h-full"
+          text={
+            ownerName
+              ? `${ownerName} doesn’t have any repositories that match`
+              : 'Could not find user'
+          }
+        />
+      )}
     </div>
   )
 }
