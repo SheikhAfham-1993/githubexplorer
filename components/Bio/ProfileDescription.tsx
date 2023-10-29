@@ -3,6 +3,7 @@ import Name from '../UI/Name'
 import Avatar from '..//UI/avatar'
 import Label from '../UI/Label'
 import SocialLinks from '../UI/SocialLinks'
+import { formatFigure } from '@/util/helpers'
 
 type Props = {
   /** The data of the owner. */
@@ -24,6 +25,19 @@ const ProfileDescription = ({ userData }: Props): React.JSX.Element => {
       </div>
       <div className="pt-1">
         <Label className="w-full md:w-[300px]" text={userData?.bio} />
+      </div>
+
+      <div className="pt-1 flex flex-row space-x-2">
+        <SocialLinks
+          icon="follower"
+          text={`${formatFigure(
+            userData?.followers.totalCount ?? 0
+          )} followers`}
+        />
+        <Label
+          className="text-sm"
+          text={`${userData?.following.totalCount} following`}
+        />
       </div>
 
       <div className="flex flex-col space-y-1">

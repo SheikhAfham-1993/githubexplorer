@@ -14,6 +14,12 @@ query {
     }
     location
     company
+    followers{
+      totalCount
+    }
+    following{
+      totalCount
+    }
     repositories(first:100) {
       nodes {
         pushedAt
@@ -21,9 +27,12 @@ query {
         url
         visibility
         description
+        forkCount
+        stargazerCount
         languages(first: 100) {
           nodes {
             name
+            color
           }
         }
       }

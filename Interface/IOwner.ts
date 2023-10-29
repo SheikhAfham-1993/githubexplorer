@@ -14,6 +14,8 @@ export interface IRepositories extends IName {
   url: string
   description?: string
   visibility: string
+  forkCount: number
+  stargazerCount: number
   languages?: {
     nodes: ILanguages[]
   }
@@ -24,6 +26,12 @@ export interface IUserData extends IName {
   bio?: string
   socialAccounts: {
     nodes?: ISocialAccounts[]
+  }
+  followers: {
+    totalCount: number
+  }
+  following: {
+    totalCount: number
   }
   location?: string
   company?: string

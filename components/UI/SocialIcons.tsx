@@ -17,6 +17,15 @@ const SocialIcons = ({ icon }: Props): React.JSX.Element => {
     case 'website':
       iconSvg = '/website.svg'
       break
+    case 'stargazers':
+      iconSvg = '/stargazer.svg'
+      break
+    case 'fork':
+      iconSvg = '/forks.svg'
+      break
+    case 'follower':
+      iconSvg = '/followers.svg'
+      break
     default:
       iconSvg = '/global.svg'
       break
