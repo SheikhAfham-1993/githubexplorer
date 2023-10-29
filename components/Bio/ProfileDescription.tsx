@@ -19,9 +19,7 @@ const ProfileDescription = ({ userData }: Props): React.JSX.Element => {
   return (
     <div className="flex-none py-5 space-y-4 w-full md:w-[300px] lg:w-[340px]">
       <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 space-y-0 md:space-y-4">
-        <div className="rounded-full h-16 w-16 md:h-60 md:w-60 lg:h-80 lg:w-80 overflow-hidden border border-gray-400">
-          <Avatar ownerAvatar={userData?.avatarUrl} />
-        </div>
+        <Avatar ownerAvatar={userData?.avatarUrl} />
         <Name ownerName={userData?.name} ownerLogin={userData?.login} />
       </div>
       <div className="pt-1">

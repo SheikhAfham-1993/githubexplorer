@@ -11,15 +11,17 @@ type Props = {
  * @param {Props} ownerAvatar - The URL of the avatar image to render. If not provided, a default avatar image will be used.
  * @return {React.JSX.Element} The rendered avatar image component.
  */
-const Avatar = ({ ownerAvatar }: Props): React.JSX.Element => {
+const Avatar = ({ ownerAvatar = '/avatar.svg' }: Props): React.JSX.Element => {
   return (
-    <Image
-      src={ownerAvatar ?? '/avatar.svg'}
-      width={400}
-      height={400}
-      priority={true}
-      alt="Picture of the author"
-    />
+    <div className="rounded-full h-16 w-16 md:h-60 md:w-60 lg:h-80 lg:w-80 overflow-hidden border border-gray-400">
+      <Image
+        src={ownerAvatar}
+        width={400}
+        height={400}
+        priority={true}
+        alt="Picture of the author"
+      />
+    </div>
   )
 }
 
