@@ -10,8 +10,9 @@ import useStore from '../store/global'
  */
 
 export const fetchOwnerGraphql = async (userName: string): Promise<void> => {
-  const { setUserData } = useStore.getState()
+  const { setUserData, setIsLoading } = useStore.getState()
   try {
+    setIsLoading(true)
     const res = await axios.post(
       `https://api.github.com/graphql`,
       {
@@ -29,5 +30,7 @@ export const fetchOwnerGraphql = async (userName: string): Promise<void> => {
     }
   } catch (error) {
     setUserData(undefined)
+  } finally {
+    setIsLoading(false)
   }
 }

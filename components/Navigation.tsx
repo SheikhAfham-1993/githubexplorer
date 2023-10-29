@@ -8,6 +8,7 @@ import Button from './UI/Button'
 import { useState } from 'react'
 import { fetchOwnerGraphql } from '../util/fetchRepo'
 import Label from './UI/Label'
+import useStore from '@/store/global'
 
 /**
  * Renders the navigation component.
@@ -16,6 +17,7 @@ import Label from './UI/Label'
  */
 const Navigation = (): React.JSX.Element => {
   const [repoName, setRepoName] = useState<string>('')
+  const { isLoading } = useStore()
   return (
     <div
       data-cy="navigation-row"
@@ -60,7 +62,7 @@ const Navigation = (): React.JSX.Element => {
         <Button
           dataCy="search-button"
           onClick={() => fetchOwnerGraphql(repoName)}
-          disabled={repoName === ''}
+          disabled={repoName === '' || isLoading}
           classNames="bg-green-600 disabled:bg-green-600/50 px-3 py-1 rounded-lg text-white text-sm font-semibold flex items-center"
         >
           <MagnifyingGlassIcon className="h-5 w-5" /> Search

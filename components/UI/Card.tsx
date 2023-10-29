@@ -2,6 +2,7 @@ import UpdatedAt from './UpdatedAt'
 import Label from './Label'
 import { IRepositories } from '../../Interface/IOwner'
 import Link from 'next/link'
+import SocialLinks from './SocialLinks'
 
 type Props = {
   /** The repository object containing information about the repo. */
@@ -39,14 +40,23 @@ const Card = ({ repo }: Props): React.JSX.Element => {
         <div className="flex flex-row items-center space-x-4">
           {repo.languages?.nodes && repo.languages?.nodes.length > 0 && (
             <div className="flex flex-row items-center space-x-1">
-              <div className="w-3 h-3 bg-yellow-600 rounded-full">&nbsp;</div>
+              <div className={`w-3 h-3 bg-yellow-600 rounded-full`}>&nbsp;</div>
               <Label
                 className="text-xs text-gray-600"
                 text={repo.languages?.nodes[0]?.name}
               />
             </div>
           )}
-
+          <SocialLinks
+            icon="stargazers"
+            text={repo.stargazerCount.toString()}
+            labelClassNames="w-full text-xs"
+          />
+          <SocialLinks
+            icon="fork"
+            text={repo.forkCount.toString()}
+            labelClassNames="w-full text-xs"
+          />
           <UpdatedAt updated={repo.pushedAt} />
         </div>
       </div>
