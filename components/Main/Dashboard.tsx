@@ -20,8 +20,11 @@ const Dashboard = ({ userData }: Props): React.JSX.Element => {
     <>
       <Header />
       <Navigation />
-      <div className="flex justify-center w-full px-4 py-5">
-        <div className="flex flex-col md:flex-row justify-center min-w-full md:min-w-[600px] lg:min-w-[1000px] xl:min-w-[1280px]">
+      <div data-cy="dashboard" className="flex justify-center w-full px-4 py-5">
+        <div
+          data-cy="dashboard-content"
+          className="flex flex-col md:flex-row justify-center min-w-full md:min-w-[600px] lg:min-w-[1000px] xl:min-w-[1280px]"
+        >
           {userData && (
             <>
               <ProfileDescription userData={userData} />
@@ -29,8 +32,12 @@ const Dashboard = ({ userData }: Props): React.JSX.Element => {
             </>
           )}
           {!userData && (
-            <div className="flex w-full h-full justify-center">
+            <div
+              data-cy="no-repositories"
+              className="flex w-full h-full justify-center"
+            >
               <Label
+                dataCy="no-repositories-label"
                 className="pb-5 text-lg font-bold flex flex-col justify-center items-center text-black flex-grow h-full"
                 text="No repositories to show"
               />
