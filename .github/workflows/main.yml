@@ -1,13 +1,14 @@
 name: E2E on Chrome
 on:
   push:
-    branches: [master]
+    branches: [dev]
 jobs:
   install:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        ref: ${{ github.head_ref }}
 
       - name: Cypress run
         uses: cypress-io/github-action@v3
@@ -17,9 +18,10 @@ jobs:
           build: npm run build
           start: npm start
           wait-on: 'http://localhost:3000'
-      
-      - name: Deploy to Vercel
-          if: ${{ success() }} # runs only if previous step (cypress tests) are successful
-            run: npx vercel --prod
-            env: 
-            VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Push to master
+        if: ${{ success() }} # This step only runs if the "Cypress run" step succeeds
+        run: |
+          git checkout master
+          git merge ${{ github.head_ref }}
+          git push origin master
