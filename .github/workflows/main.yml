@@ -8,7 +8,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        ref: ${{ github.head_ref }}
 
       - name: Cypress run
         uses: cypress-io/github-action@v3
@@ -18,10 +17,3 @@ jobs:
           build: npm run build
           start: npm start
           wait-on: 'http://localhost:3000'
-
-      - name: Push to master
-        if: ${{ success() }} # This step only runs if the "Cypress run" step succeeds
-        run: |
-          git checkout master
-          git merge ${{ github.head_ref }}
-          git push origin master
