@@ -1,0 +1,92 @@
+
+Chromatic CLI v7.5.4
+https://www.chromatic.com/docs/cli
+
+Authenticating with Chromatic
+    → Connecting to https://index.chromatic.com
+Authenticated with Chromatic
+    → Using project token '****************fef7'
+Retrieving git information
+Retrieved git information
+    → Commit 'f5e3419' on branch 'master'; found 1 parent build
+Collecting Storybook metadata
+Collected Storybook metadata
+    → Storybook 7.5.1 for React; using the @storybook/nextjs builder (7.5.1); supported addons found: Links, Essentials, Interactions
+Initializing build
+Initialized build
+    → Build 2 initialized
+Building your Storybook
+    → Running command: npm run build-storybook -- --output-dir C:\Users\sh_af\AppData\Local\Temp\chromatic--19080-xAklv6G1HzoR
+Storybook built in 42 seconds
+    → View build log at C:\Personel\GithubExplorer\github-explorer\build-storybook.log
+Publish your built Storybook
+    → Validating Storybook files
+Publishing your built Storybook
+    → Retrieving target location
+    → Starting publish
+    → [                    ] 1%
+    → [=                   ] 5%
+    → [=                   ] 7%
+    → [==                  ] 9%
+    → [==                  ] 10%
+    → [==                  ] 11%
+    → [=====               ] 23%
+    → [=====               ] 24%
+    → [=====               ] 25%
+    → [=====               ] 26%
+    → [======              ] 30%
+    → [======              ] 31%
+    → [======              ] 32%
+    → [=======             ] 33%
+    → [=======             ] 34%
+    → [=======             ] 35%
+    → [========            ] 38%
+    → [========            ] 39%
+    → [========            ] 40%
+    → [========            ] 41%
+    → [=========           ] 44%
+    → [=========           ] 47%
+    → [==========          ] 50%
+    → [==========          ] 52%
+    → [===========         ] 53%
+    → [===========         ] 56%
+    → [===========         ] 57%
+    → [============        ] 58%
+    → [============        ] 62%
+    → [=============       ] 64%
+    → [==============      ] 68%
+    → [==============      ] 70%
+    → [===============     ] 73%
+    → [===============     ] 74%
+    → [================    ] 78%
+    → [================    ] 79%
+    → [================    ] 80%
+    → [=================   ] 85%
+    → [==================  ] 89%
+    → [==================  ] 90%
+    → [==================  ] 91%
+    → [=================== ] 93%
+    → [=================== ] 94%
+    → [=================== ] 96%
+    → [=================== ] 97%
+    → [====================] 100%
+Publish complete in 49 seconds
+    → View your Storybook at https://653e41ee757efa30138de67d-zcryujdsua.chromatic.com
+Verifying your Storybook
+    → This may take a few minutes
+Started build 2
+    → View build details at https://www.chromatic.com/build?appId=653e41ee757efa30138de67d&number=2
+Running 16 tests
+    → This may take a few minutes
+    → [=                   ] 1/16  Dashboard › With User Data 
+    → [===                 ] 2/16  Dashboard › When Undefined 
+    → [=====               ] 4/16  Avatar › User Afham 
+    → [======              ] 5/16  Button › Basic Button 
+    → [=========           ] 7/16  Button › Blue Button 
+    → [=============       ] 10/16  Label › Github Explorer 
+    → [================    ] 13/16  SocialLinks › Location 
+    → [=================== ] 15/16  SocialLinks › Linled In 
+    → [====================] 16/16  SocialLinks › Others 
+√ Build 2 passed!
+No visual changes were found in this build.
+i View build details at https://www.chromatic.com/build?appId=653e41ee757efa30138de67d&number=2
