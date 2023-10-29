@@ -8,6 +8,12 @@ const userData: IUserData = {
     'https://avatars.githubusercontent.com/u/56600934?u=b837074719a4ffada3b2d5e7d67a1a0d30b13da6&v=4',
   name: 'Afham',
   login: 'SheikhAfham-1993',
+  followers: {
+    totalCount: 0,
+  },
+  following: {
+    totalCount: 0,
+  },
   bio: 'Front End Developer @ Mara Solutions\r\nFull stack Nerd. \r\nData analysis lover.',
   socialAccounts: {
     nodes: [
@@ -26,6 +32,8 @@ const userData: IUserData = {
   repositories: {
     nodes: [
       {
+        forkCount: 0,
+        stargazerCount: 0,
         pushedAt: new Date('2020-12-07T00:12:43Z'),
         name: 'WDI-Project',
         url: 'https://github.com/adehaan/WDI-Project',
@@ -46,6 +54,8 @@ const userData: IUserData = {
         },
       },
       {
+        forkCount: 10,
+        stargazerCount: 20,
         pushedAt: new Date('2023-10-16T10:28:46Z'),
         name: 'SheikhAfham-1993',
         url: 'https://github.com/SheikhAfham-1993/SheikhAfham-1993',
@@ -56,6 +66,8 @@ const userData: IUserData = {
         },
       },
       {
+        forkCount: 30,
+        stargazerCount: 40,
         pushedAt: new Date('2023-10-28T17:03:08Z'),
         name: 'githubexplorer',
         url: 'https://github.com/SheikhAfham-1993/githubexplorer',
