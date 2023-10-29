@@ -17,3 +17,10 @@ jobs:
           build: npm run build
           start: npm start
           wait-on: 'http://localhost:3000'
+
+      - name: Merge changes
+        if: ${{ success() }} # This step only runs if the "Install dependencies" step succeeds
+        run: git merge origin/master
+
+      - name: Push changes
+        run: git push
