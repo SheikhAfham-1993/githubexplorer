@@ -8,7 +8,7 @@ import Button from './UI/Button'
 import { useState } from 'react'
 import { fetchOwnerGraphql } from '../util/fetchRepo'
 import Label from './UI/Label'
-import useStore from '@/store/global'
+import useStore from '../store/global'
 
 /**
  * Renders the navigation component.

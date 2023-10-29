@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 import Dashboard from '../../components/Main/Dashboard'
-import { IUserData } from '@/Interface/IOwner'
+import { IUserData } from '../../Interface/IOwner'
 
 const userData: IUserData = {
   avatarUrl:
@@ -32,8 +32,8 @@ const userData: IUserData = {
   repositories: {
     nodes: [
       {
-        forkCount: 0,
-        stargazerCount: 0,
+        forkCount: 10,
+        stargazerCount: 10,
         pushedAt: new Date('2020-12-07T00:12:43Z'),
         name: 'WDI-Project',
         url: 'https://github.com/adehaan/WDI-Project',

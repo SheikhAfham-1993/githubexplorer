@@ -3,7 +3,7 @@ import Name from '../UI/Name'
 import Avatar from '..//UI/avatar'
 import Label from '../UI/Label'
 import SocialLinks from '../UI/SocialLinks'
-import { formatFigure } from '@/util/helpers'
+import { formatFigure } from '../../util/helpers'
 
 type Props = {
   /** The data of the owner. */
@@ -18,16 +18,26 @@ type Props = {
  */
 const ProfileDescription = ({ userData }: Props): React.JSX.Element => {
   return (
-    <div className="flex-none py-5 space-y-4 w-full md:w-[300px] lg:w-[340px]">
-      <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 space-y-0 md:space-y-4">
+    <div
+      data-cy="profile-description"
+      className="flex-none py-5 space-y-4 w-full md:w-[300px] lg:w-[340px]"
+    >
+      <div
+        data-cy="profile-avatar"
+        className="flex flex-row md:flex-col space-x-4 md:space-x-0 space-y-0 md:space-y-4"
+      >
         <Avatar ownerAvatar={userData?.avatarUrl} />
         <Name ownerName={userData?.name} ownerLogin={userData?.login} />
       </div>
       <div className="pt-1">
-        <Label className="w-full md:w-[300px]" text={userData?.bio} />
+        <Label
+          dataCy="profile-bio"
+          className="w-full md:w-[300px]"
+          text={userData?.bio}
+        />
       </div>
 
-      <div className="pt-1 flex flex-row space-x-2">
+      <div data-cy="profile-followers" className="pt-1 flex flex-row space-x-2">
         <SocialLinks
           icon="follower"
           text={`${formatFigure(
@@ -35,12 +45,13 @@ const ProfileDescription = ({ userData }: Props): React.JSX.Element => {
           )} followers`}
         />
         <Label
+          dataCy="profile-following"
           className="text-sm"
           text={`${userData?.following.totalCount} following`}
         />
       </div>
 
-      <div className="flex flex-col space-y-1">
+      <div data-cy="profile-social" className="flex flex-col space-y-1">
         {userData?.location && (
           <SocialLinks icon="LOCATION" text={userData?.location} />
         )}

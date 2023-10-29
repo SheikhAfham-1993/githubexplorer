@@ -16,8 +16,12 @@ type Props = {
 const Name = ({ ownerLogin, ownerName }: Props): React.JSX.Element => {
   return (
     <div className="flex flex-col w-fit items-start">
-      <Label className="text-2xl font-semibold" text={ownerName} />
-      <Label className="text-xl" text={ownerLogin} />
+      <Label
+        dataCy="owner-name"
+        className="text-2xl font-semibold"
+        text={ownerName}
+      />
+      <Label dataCy="owner-login" className="text-xl" text={ownerLogin} />
     </div>
   )
 }
