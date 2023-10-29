@@ -1,7 +1,16 @@
 import Image from 'next/image'
 type Props = {
+  /** The name of the social icon such as 'location', 'youtube', 'linkedin', 'website', 'stargazers', 'fork', 'follower' . */
   icon: string
 }
+
+/**
+ * Generates the social icon based on the provided icon name.
+ *
+ * @param {string} icon - The name of the social icon such as 'location', 'youtube', 'linkedin', 'website', 'stargazers', 'fork', 'follower' .
+ * @return {React.JSX.Element} The generated social icon element.
+ */
+
 const SocialIcons = ({ icon }: Props): React.JSX.Element => {
   let iconSvg: string = ''
   switch (icon.toLowerCase()) {

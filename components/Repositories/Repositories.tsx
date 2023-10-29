@@ -25,6 +25,12 @@ const Repositories = ({ userData }: Props): React.JSX.Element => {
     setTempData(userData.repositories?.nodes ?? [])
   }, [userData])
 
+  /**
+   * Sets the temp data based on the user input.
+   *
+   * @param {React.ChangeEvent<HTMLInputElement>} e - The event object representing the change in the input field.
+   * @return {void} No return value.
+   */
   const setTempDataHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTempData(
       userData?.repositories?.nodes?.filter((repo) =>
@@ -33,6 +39,9 @@ const Repositories = ({ userData }: Props): React.JSX.Element => {
     )
   }
 
+  /**
+   * Clears the filter input and sets the temporary data to the user's repositories nodes, or an empty array if it is null.
+   */
   const clearFilterHandler = () => {
     if (filterRef.current) filterRef.current.value = ''
     setTempData(userData?.repositories?.nodes ?? [])
