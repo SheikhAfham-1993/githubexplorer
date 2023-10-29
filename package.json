@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p -s ./public -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "serve-storybook": "serve storybook-static"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",

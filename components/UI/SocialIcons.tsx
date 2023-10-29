@@ -4,17 +4,17 @@ type Props = {
 }
 const SocialIcons = ({ icon }: Props): React.JSX.Element => {
   let iconSvg: string = ''
-  switch (icon) {
-    case 'LOCATION':
+  switch (icon.toLowerCase()) {
+    case 'location':
       iconSvg = '/location.svg'
       break
-    case 'YOUTUBE':
+    case 'youtube':
       iconSvg = '/youtube.svg'
       break
-    case 'LINKEDIN':
+    case 'linkedin':
       iconSvg = '/linkedIn.svg'
       break
-    case 'WEBSITE':
+    case 'website':
       iconSvg = '/website.svg'
       break
     default:
