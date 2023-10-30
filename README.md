@@ -15,6 +15,21 @@ npm install
 
 - The above command will install all the dependencies that this project needs.
 
+## Running the project
+
+This project is using [Github GraphQL](https://docs.github.com/en/graphql) which is authenticated via Personal access token. In order to run this project you need to create Personel access token in you github account. Follow the below steps to create the token
+
+- Go to your github account
+- Go to settings. You fill find settings upon clicking you profile image on top right.
+- Under settings scroll down to "Develop settings".
+- Then click on Personal access token and select "Tokens (classic)".
+- Under Tokens (classic), click on Generate new token. Click on the (classic) option.
+- Github will then need your confirmation by requiring your password.
+- Give your token any note.
+- Select scopes that you want this token for. For this project just enable "public_repo" under repo.
+- Click Generate token, copy the token and save it somewhere because it is only visible once.
+-
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
