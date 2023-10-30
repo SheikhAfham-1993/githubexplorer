@@ -77,3 +77,15 @@ The project also has [Cypress E2E testing](https://www.cypress.io/) scripts. If 
 - After running `npm run cypress`, a window will open. Select E2E testing and chrome as testing browser.
 
 In order to run the tests locally you must first run the application. By running the application cypress will detect it and start running E2E scripts. In the end you will find the result of the tests
+
+## Improvments
+
+This project has various Github actions to automate various tasks for e.g.
+
+- Deploying the storybook to chromatic when push occurs.
+- Running Cypress tests on pull requests.
+- Deploying the storybook to the master branch when merge occurs.
+
+From the above three actions the merging from dev branch to master is manual right now. What I believe (in theory) is that this can also be achieved via Github Actions. Also pull requests are also created manually this process as well can be taken care by Github actions.
+
+Furthermore, By leveraging the full power of the Github graphQL API, this github explorer project can also be improved by not only showing repositories but also other functionalities such as issues.
