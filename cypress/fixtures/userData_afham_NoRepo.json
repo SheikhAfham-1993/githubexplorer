@@ -1,0 +1,33 @@
+{
+  "data": {
+    "user": {
+      "avatarUrl": "https://avatars.githubusercontent.com/u/56600934?u=b837074719a4ffada3b2d5e7d67a1a0d30b13da6&v=4",
+      "name": "Afham",
+      "login": "SheikhAfham-1993",
+      "followers": {
+        "totalCount": 0
+      },
+      "following": {
+        "totalCount": 0
+      },
+      "bio": "Front End Developer @ Mara Solutions\r\nFull stack Nerd. \r\nData analysis lover.",
+      "socialAccounts": {
+        "nodes": [
+          {
+            "provider": "YOUTUBE",
+            "displayName": "@retrogaming9443"
+          },
+          {
+            "provider": "LINKEDIN",
+            "displayName": "in/afham-sheikh"
+          }
+        ]
+      },
+      "location": "Mannheim, Germany",
+      "company": "Mara Solutions",
+      "repositories": {
+        "nodes": null
+      }
+    }
+  }
+}
