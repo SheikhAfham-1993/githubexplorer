@@ -1,0 +1,88 @@
+{
+  "avatarUrl": "https://avatars.githubusercontent.com/u/56600934?u=b837074719a4ffada3b2d5e7d67a1a0d30b13da6&v=4",
+  "name": "Afham",
+  "login": "SheikhAfham-1993",
+  "followers": {
+    "totalCount": 0
+  },
+  "following": {
+    "totalCount": 0
+  },
+  "bio": "Front End Developer @ Mara Solutions\r\nFull stack Nerd. \r\nData analysis lover.",
+  "socialAccounts": {
+    "nodes": [
+      {
+        "provider": "YOUTUBE",
+        "displayName": "@retrogaming9443"
+      },
+      {
+        "provider": "LINKEDIN",
+        "displayName": "in/afham-sheikh"
+      }
+    ]
+  },
+  "location": "Mannheim, Germany",
+  "company": "Mara Solutions",
+  "repositories": {
+    "nodes": [
+      {
+        "forkCount": 10,
+        "stargazerCount": 10,
+        "pushedAt": "2020-12-07T00:12:43.000Z",
+        "name": "WDI-Project",
+        "url": "https://github.com/adehaan/WDI-Project",
+        "visibility": "PUBLIC",
+        "description": "Web Data Integration Project",
+        "languages": {
+          "nodes": [
+            {
+              "name": "Python"
+            },
+            {
+              "name": "Jupyter Notebook"
+            },
+            {
+              "name": "Java"
+            }
+          ]
+        }
+      },
+      {
+        "forkCount": 10,
+        "stargazerCount": 20,
+        "pushedAt": "2023-10-16T10:28:46.000Z",
+        "name": "SheikhAfham-1993",
+        "url": "https://github.com/SheikhAfham-1993/SheikhAfham-1993",
+        "visibility": "PUBLIC",
+        "languages": {
+          "nodes": []
+        }
+      },
+      {
+        "forkCount": 30,
+        "stargazerCount": 40,
+        "pushedAt": "2023-10-28T17:03:08.000Z",
+        "name": "githubexplorer",
+        "url": "https://github.com/SheikhAfham-1993/githubexplorer",
+        "visibility": "PUBLIC",
+        "description": "Next js application to explore the repositories of a user",
+        "languages": {
+          "nodes": [
+            {
+              "name": "CSS"
+            },
+            {
+              "name": "TypeScript"
+            },
+            {
+              "name": "JavaScript"
+            },
+            {
+              "name": "MDX"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
