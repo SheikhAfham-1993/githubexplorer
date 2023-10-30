@@ -1,9 +1,3 @@
-import userData_afham from '../fixtures/userData_afham.json'
-import userData_fabpot from '../fixtures/userData_fabpot.json'
-
-let afham: any = userData_afham
-let fabpot: any = userData_fabpot
-
 describe('Profile Description', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000')
@@ -26,19 +20,16 @@ describe('Profile Description', () => {
       })
 
     cy.intercept('POST', 'https://api.github.com/graphql', {
-      statusCode: 200,
-      body: afham,
+      fixture: 'userData_afham.json',
+    }).then(() => {
+      cy.get('[data-cy=profile-description]')
+        .should('be.visible')
+        .then(() => {
+          cy.get('[data-cy=profile-avatar]').should('be.visible')
+          cy.get('[data-cy=profile-followers]').should('be.visible')
+          cy.get('[data-cy=profile-social]').should('be.visible')
+        })
     })
-      .wait(2000)
-      .then(() => {
-        cy.get('[data-cy=profile-description]')
-          .should('be.visible')
-          .then(() => {
-            cy.get('[data-cy=profile-avatar]').should('be.visible')
-            cy.get('[data-cy=profile-followers]').should('be.visible')
-            cy.get('[data-cy=profile-social]').should('be.visible')
-          })
-      })
   })
 
   it('checks if the profile description is there for fabpot', () => {
@@ -49,10 +40,9 @@ describe('Profile Description', () => {
       })
 
     cy.intercept('POST', 'https://api.github.com/graphql', {
-      statusCode: 200,
-      body: fabpot,
+      fixture: 'userData_fabpot.json',
     })
-      .wait(3000)
+      .wait(2000)
       .then(() => {
         cy.get('[data-cy=profile-description]')
           .should('be.visible')
