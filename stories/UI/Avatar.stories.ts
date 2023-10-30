@@ -8,7 +8,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'UI component to render an avatar image based',
+        component: 'UI component to render an avatar image based on url',
       },
     },
   },
