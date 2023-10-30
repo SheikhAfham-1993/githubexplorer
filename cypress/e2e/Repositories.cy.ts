@@ -11,27 +11,9 @@ describe('Repositories testing', () => {
             cy.get('[data-cy=search-input]').should('be.visible')
           })
       })
-  })
-
-  it('checks if no repositories are there', () => {
-    cy.get('[data-cy=search-input]')
-      .type('sheikhafham-1993')
-      .then(() => {
-        cy.get('[data-cy=search-button]').should('not.be.disabled').click()
-      })
 
     cy.intercept('POST', 'https://api.github.com/graphql', {
-      fixture: 'userData_afham_NoRepo.json',
-    }).then(() => {
-      cy.get('[data-cy=repositories-container]')
-        .should('be.visible')
-        .then(() => {
-          cy.get('[data-cy=user-repositories]')
-            .should('be.visible')
-            .then(() => {
-              cy.get('[data-cy=no-repositories-found]').should('be.visible')
-            })
-        })
+      fixture: 'userData_afham.json',
     })
   })
 
@@ -40,23 +22,47 @@ describe('Repositories testing', () => {
       .type('sheikhafham-1993')
       .then(() => {
         cy.get('[data-cy=search-button]').should('not.be.disabled').click()
+        cy.get('[data-cy=repositories-container]')
+          .should('be.visible')
+          .then(() => {
+            cy.get('[data-cy=user-repositories]')
+              .should('be.visible')
+              .then(() => {
+                cy.get('[data-cy=repositories-card-list]')
+                  .should('be.visible')
+                  .children()
+                  .should('have.length.gt', 0)
+              })
+          })
       })
+  })
 
-    cy.intercept('POST', 'https://api.github.com/graphql', {
-      fixture: 'userData_afham.json',
-    }).then(() => {
-      cy.get('[data-cy=repositories-container]')
-        .should('be.visible')
-        .then(() => {
-          cy.get('[data-cy=user-repositories]')
-            .should('be.visible')
-            .then(() => {
-              cy.get('[data-cy=repositories-card-list]')
-                .should('be.visible')
-                .children()
-                .should('have.length.gt', 0)
-            })
-        })
-    })
+  it('checks if the filtered repositories are there', () => {
+    cy.get('[data-cy=search-input]')
+      .type('sheikhafham-1993')
+      .then(() => {
+        cy.get('[data-cy=search-button]').should('not.be.disabled').click()
+        cy.get('[data-cy=find-repositories]')
+          .should('be.visible')
+          .type('WDI')
+          .then(() => {
+            cy.get('[data-cy=search-results]')
+              .should('be.visible')
+              .then(() => {
+                cy.get('[data-cy=search-results-text]').should(
+                  'not.contain',
+                  '0 result for repositories matching data'
+                )
+              })
+            cy.get('[data-cy=user-repositories]')
+              .should('be.visible')
+              .then(() => {
+                cy.get('[data-cy=repositories-card-list]')
+                  .should('be.visible')
+                  .children()
+                  .should('have.length.gt', 0)
+              })
+          })
+      })
   })
 })
