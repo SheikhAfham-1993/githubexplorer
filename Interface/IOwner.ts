@@ -7,7 +7,9 @@ interface IName {
   name?: string
 }
 
-export interface ILanguages extends IName {}
+export interface ILanguages extends IName {
+  color: string
+}
 
 export interface IRepositories extends IName {
   pushedAt: Date
