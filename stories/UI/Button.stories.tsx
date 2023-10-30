@@ -54,35 +54,3 @@ export const Basic_Button = {
       'bg-green-600 disabled:bg-green-600/50 px-3 py-1 rounded-lg text-white text-sm font-semibold flex items-center',
   },
 }
-
-export const Basic_Button_Disabled = {
-  args: {
-    children: (
-      <>
-        <MagnifyingGlassIcon className="h-5 w-5" /> Search
-      </>
-    ),
-    onClick: () => {
-      console.log('clicked')
-    },
-    disabled: true,
-    classNames:
-      'bg-green-600 disabled:bg-green-600/50 px-3 py-1 rounded-lg text-white text-sm font-semibold flex items-center',
-  },
-}
-
-export const Blue_Button = {
-  args: {
-    children: (
-      <>
-        <MagnifyingGlassIcon className="h-5 w-5" /> Search
-      </>
-    ),
-    onClick: () => {
-      console.log('clicked')
-    },
-    disabled: false,
-    classNames:
-      'bg-yellow-600 disabled:bg-blue-600/50 px-3 py-1 rounded-lg text-white text-sm font-semibold flex items-center',
-  },
-}

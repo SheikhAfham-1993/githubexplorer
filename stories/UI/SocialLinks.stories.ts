@@ -5,6 +5,14 @@ export default {
   title: 'UI/SocialLinks',
   component: SocialLinks,
   tags: ['autodocs'],
+  argTypes: {
+    // foo is the property we want to remove from the UI
+    labelClassNames: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as Meta
 
 export const Location = {

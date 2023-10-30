@@ -4,11 +4,17 @@ import Avatar from '../../components/UI/avatar'
 export default {
   title: 'UI/Avatar',
   component: Avatar,
-  tags: ['autodocs'],
   parameters: {
     docs: {
       description: {
         component: 'UI component to render an avatar image based on url',
+      },
+    },
+  },
+  argTypes: {
+    ownerAvatar: {
+      table: {
+        disable: true,
       },
     },
   },
