@@ -52,7 +52,7 @@ describe('Profile Description', () => {
       statusCode: 200,
       body: fabpot,
     })
-      .wait(2000)
+      .wait(3000)
       .then(() => {
         cy.get('[data-cy=profile-description]')
           .should('be.visible')
