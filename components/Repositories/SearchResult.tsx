@@ -24,7 +24,7 @@ const SearchResult = ({
   return (
     <div
       data-cy="search-results"
-      className="flex flex-row items-center border-b border-b-gray-300 py-4"
+      className="grid grid-cols-1 md:flex md:flex-row md:items-center border-b border-b-gray-300 py-4 space-y-2 md:space-y-0"
     >
       <div data-cy="search-results-text" className="flex-none">
         {tempdata?.length === 0 ? '0' : `${tempdata?.length}`} result for
@@ -32,7 +32,7 @@ const SearchResult = ({
       </div>
       <div
         onClick={clearFilterHandler}
-        className="flex-1 flex items-center w-full justify-end space-x-2 cursor-pointer group"
+        className="flex-1 flex items-center w-full justify-start md:justify-end space-x-2 cursor-pointer group"
       >
         <XMarkIcon className="h-4 w-4 bg-gray-500 text-white rounded-md group-hover:bg-blue-500" />
         <Label

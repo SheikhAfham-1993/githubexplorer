@@ -3,6 +3,7 @@ import Label from './Label'
 import { IRepositories } from '../../Interface/IOwner'
 import Link from 'next/link'
 import SocialLinks from './SocialLinks'
+import ColorCode from './ColorCode'
 
 type Props = {
   /** The repository object containing information about the repo. */
@@ -25,7 +26,6 @@ const Card = ({ repo }: Props): React.JSX.Element => {
             text={repo?.name}
           />
         </Link>
-
         <Label
           className="font-bold text-xs text-gray-600 border-2 rounded-xl px-2 capitalize"
           text={repo.visibility.toLowerCase()}
@@ -40,7 +40,7 @@ const Card = ({ repo }: Props): React.JSX.Element => {
         <div className="flex flex-row items-center space-x-4">
           {repo.languages?.nodes && repo.languages?.nodes.length > 0 && (
             <div className="flex flex-row items-center space-x-1">
-              <div className={`w-3 h-3 bg-yellow-600 rounded-full`}>&nbsp;</div>
+              <ColorCode code={repo.languages?.nodes[0]?.color} />
               <Label
                 className="text-xs text-gray-600"
                 text={repo.languages?.nodes[0]?.name}
