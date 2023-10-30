@@ -28,7 +28,18 @@ This project is using [Github GraphQL](https://docs.github.com/en/graphql) which
 - Give your token any note.
 - Select scopes that you want this token for. For this project just enable "public_repo" under repo.
 - Click Generate token, copy the token and save it somewhere because it is only visible once.
--
+
+## Create .env.local file
+
+Under the root of your project, create a new file called ".env.local". The file should be named this way as Next.js read local environment variables from this file.
+
+Under ".env.local", add the following key
+
+```bash
+NEXT_PUBLIC_GITHUB_TOKEN=YOUR-PERSONAL-ACCESS-TOKEN
+```
+
+Replace <YOUR-PERSONAL-ACCESS-TOKEN> with your generated token that you created.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
