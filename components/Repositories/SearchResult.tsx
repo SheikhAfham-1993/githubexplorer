@@ -22,8 +22,11 @@ const SearchResult = ({
   clearFilterHandler,
 }: Props): React.JSX.Element => {
   return (
-    <div className="flex flex-row items-center border-b border-b-gray-300 py-4">
-      <div className="flex-none">
+    <div
+      data-cy="search-results"
+      className="flex flex-row items-center border-b border-b-gray-300 py-4"
+    >
+      <div data-cy="search-results-text" className="flex-none">
         {tempdata?.length === 0 ? '0' : `${tempdata?.length}`} result for
         repositories matching <span className="font-semibold">data</span>
       </div>

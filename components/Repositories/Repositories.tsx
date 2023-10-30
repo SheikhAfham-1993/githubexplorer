@@ -48,11 +48,15 @@ const Repositories = ({ userData }: Props): React.JSX.Element => {
   }
 
   return (
-    <div className="flex-1">
+    <div data-cy="repositories-container" className="flex-1">
       {userData && (
         <>
-          <div className="border-b border-b-gray-300  pb-5">
+          <div
+            data-cy="user-repositories"
+            className="border-b border-b-gray-300  pb-5"
+          >
             <input
+              data-cy="find-repositories"
               ref={filterRef}
               onChange={setTempDataHandler}
               className="w-full md:w-3/4 border border-gray-400 py-1 px-3 rounded-lg placeholder:text-sm text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"
@@ -67,7 +71,7 @@ const Repositories = ({ userData }: Props): React.JSX.Element => {
             />
           )}
           {tempdata?.length > 0 && (
-            <div className="pb-5">
+            <div data-cy="repositories-card-list" className="pb-5">
               {tempdata.map((repo, index) => (
                 <Card key={index} repo={repo} />
               ))}
@@ -75,6 +79,7 @@ const Repositories = ({ userData }: Props): React.JSX.Element => {
           )}
           {tempdata?.length === 0 && (
             <Label
+              dataCy="no-repositories-found"
               className="pb-5 text-lg font-bold flex flex-col justify-center items-center text-black flex-grow h-full"
               text={`No repositories found`}
             />
