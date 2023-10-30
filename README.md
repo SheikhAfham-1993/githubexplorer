@@ -1,10 +1,10 @@
 ## Github explorer
 
-[Next.js](https://nextjs.org/) project that uses app router and powered by [TailwindCSS](https://tailwindcss.com/) for responsivness
+A [Next.js](https://nextjs.org/) project that uses app router and powered by [TailwindCSS](https://tailwindcss.com/) for responsivness
 
 ## Getting Started
 
-In order to run this project, you must install [Node.js](https://nodejs.org/en). After installing Node.js you can then use npm to install the dependencies. To install the dependencies follow the below steps:
+In order to run this project, you must install [Node.js](https://nodejs.org/en). After installing Node.js you can then use [Npm](https://www.npmjs.com/) to install the dependencies. To install the dependencies follow the below steps:
 
 - Open the project with your selected IDE. ([Visual Studio Code](https://code.visualstudio.com/) is preferred.)
 - Open terminal inside the IDE and type below command
