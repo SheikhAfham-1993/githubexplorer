@@ -39,7 +39,15 @@ Under ".env.local", add the following key
 NEXT_PUBLIC_GITHUB_TOKEN=YOUR-PERSONAL-ACCESS-TOKEN
 ```
 
-Replace <YOUR-PERSONAL-ACCESS-TOKEN> with your generated token that you created.
+Replace "YOUR-PERSONAL-ACCESS-TOKEN" with your generated token that you created.
+
+## Executing the project
+
+Now, if you have followed all the instructions above, you can now run the project by running
+
+```bash
+npm run dev
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
