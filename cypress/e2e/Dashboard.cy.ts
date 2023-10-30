@@ -3,6 +3,7 @@ describe('Dashboard initially', () => {
     cy.visit('http://localhost:3000')
     cy.get('[data-cy=header]').should('be.visible')
   })
+
   it('Check if header title is visible', () => {
     cy.visit('http://localhost:3000')
     cy.get('[data-cy=header-title]')
@@ -71,6 +72,23 @@ describe('Dashboard initially', () => {
                 cy.get('[data-cy=no-repositories-label]')
                   .should('be.visible')
                   .should('contain', 'No repositories to show')
+              })
+          })
+      })
+  })
+
+  it('Check if, after typing in the search input field, the search button is enabled', () => {
+    cy.visit('http://localhost:3000')
+    cy.get('[data-cy=navigation-row]')
+      .should('be.visible')
+      .within(() => {
+        cy.get('[data-cy=search-input-container]')
+          .should('be.visible')
+          .within(() => {
+            cy.get('[data-cy=search-input]')
+              .type('sheikhafham-1993')
+              .then(() => {
+                cy.get('[data-cy=search-button]').should('not.be.disabled')
               })
           })
       })

@@ -15,6 +15,7 @@ const Avatar = ({ ownerAvatar = '/avatar.svg' }: Props): React.JSX.Element => {
   return (
     <div className="rounded-full h-16 w-16 md:h-60 md:w-60 lg:h-80 lg:w-80 overflow-hidden border border-gray-400">
       <Image
+        data-cy="user-avatar"
         src={ownerAvatar}
         width={400}
         height={400}

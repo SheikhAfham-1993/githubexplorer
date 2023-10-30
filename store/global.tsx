@@ -1,4 +1,4 @@
-import { IUserData } from '@/Interface/IOwner'
+import { IUserData } from '../Interface/IOwner'
 
 import { create } from 'zustand'
 

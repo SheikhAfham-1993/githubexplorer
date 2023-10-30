@@ -2,6 +2,8 @@ import { Meta } from '@storybook/react'
 import Card from '../../components/UI/Card'
 
 const repo_c9s = {
+  forkCount: 10,
+  stargazerCount: 20,
   pushedAt: '2011-02-13T15:01:40Z',
   name: 'git-local',
   url: 'https://github.com/c9s/git-local',
@@ -12,6 +14,8 @@ const repo_c9s = {
   },
 }
 const repo_afham = {
+  forkCount: 30,
+  stargazerCount: 40,
   pushedAt: '2023-10-28T18:26:58Z',
   name: 'githubexplorer',
   url: 'https://github.com/SheikhAfham-1993/githubexplorer',
@@ -36,6 +40,8 @@ const repo_afham = {
 }
 
 const postModern = {
+  forkCount: 0,
+  stargazerCount: 0,
   pushedAt: '2012-04-25T01:33:44Z',
   name: 'scm',
   url: 'https://github.com/postmodern/scm',
