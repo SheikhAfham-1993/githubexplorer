@@ -18,6 +18,16 @@ export default {
         disable: true,
       },
     },
+    classNames: {
+      table: {
+        disable: true,
+      },
+    },
+    dataCy: {
+      table: {
+        disable: true,
+      },
+    },
   },
   parameters: {
     docs: {
