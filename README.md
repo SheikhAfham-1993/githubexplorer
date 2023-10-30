@@ -1,18 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Github explorer
+
+[Next.js](https://nextjs.org/) project that uses app router and powered by [TailwindCSS](https://tailwindcss.com/) for responsivness
 
 ## Getting Started
 
-First, run the development server:
+In order to run this project, you must install [Node.js](https://nodejs.org/en). After installing Node.js you can then use npm to install the dependencies. To install the dependencies follow the below steps:
+
+- Open the project with your selected IDE. ([Visual Studio Code](https://code.visualstudio.com/) is preferred.)
+- Open terminal inside the IDE and type below command
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
+
+- The above command will install all the dependencies that this project needs.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
