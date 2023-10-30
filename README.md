@@ -23,11 +23,11 @@ npm install
 
 ## Running the project
 
-This project is using [Github GraphQL](https://docs.github.com/en/graphql) which is authenticated via Personal access token. In order to run this project you need to create Personel access token in you github account. Follow the below steps to create the token
+This project is using [Github GraphQL](https://docs.github.com/en/graphql) which is authenticated via Personal access token. In order to run this project you need to create Personel access token in your Github account. Follow the below steps to create the token
 
-- Go to your github account
-- Go to settings. You fill find settings upon clicking you profile image on top right.
-- Under settings scroll down to "Develop settings".
+- Go to your Github account
+- Go to settings. You will find settings upon clicking your profile image on top right.
+- Under settings scroll down to "Developer settings".
 - Then click on Personal access token and select "Tokens (classic)".
 - Under Tokens (classic), click on Generate new token. Click on the (classic) option.
 - Github will then need your confirmation by requiring your password.
@@ -49,7 +49,7 @@ Replace "YOUR-PERSONAL-ACCESS-TOKEN" with your generated token that you created.
 
 ## Executing the project
 
-Now, if you have followed all the instructions above, you can now run the project by running
+Now, if you have followed all the instructions above, you can now run the project by executing the below command.
 
 ```bash
 npm run dev
@@ -65,6 +65,8 @@ The project components are also documented via [Storybook](https://storybook.js.
 npm run storybook
 ```
 
+The above command will open storybook in a new browser tab where you can observe different components and their behavior
+
 ## Cypress E2E testing
 
 The project also has [Cypress E2E testing](https://www.cypress.io/) scripts. If you want to execute the tests locally, follow below instructions.
@@ -75,5 +77,3 @@ The project also has [Cypress E2E testing](https://www.cypress.io/) scripts. If 
 - After running `npm run cypress`, a window will open. Select E2E testing and chrome as testing browser.
 
 In order to run the tests locally you must first run the application. By running the application cypress will detect it and start running E2E scripts. In the end you will find the result of the tests
-
-The above command will open storybook in a new browser tab where you can observe different components and their behavior
