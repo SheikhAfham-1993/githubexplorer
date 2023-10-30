@@ -7,6 +7,8 @@ name: 'Chromatic'
 on:
   push:
     branches: [master]
+      paths:
+        - stories/**
 
 # List of jobs
 jobs:
