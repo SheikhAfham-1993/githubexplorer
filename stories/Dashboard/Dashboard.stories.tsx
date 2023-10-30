@@ -21,6 +21,13 @@ export default {
       },
     ],
   },
+  argTypes: {
+    userData: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as Meta
 
 export const WithUserData = {
