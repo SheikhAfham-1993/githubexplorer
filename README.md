@@ -51,11 +51,18 @@ npm run dev
 
 ## Storybook
 
-The project components are also documented via Storybook. To run storybook, open a new terminal and type
+The project components are also documented via [Storybook](https://storybook.js.org/). To run storybook, open a new terminal and type
 
 ```bash
 npm run storybook
 ```
+
+## Cypress E2E testing
+
+The project also has [Cypress E2E testing](https://www.cypress.io/) scripts. If you want to execute the tests locally, follow below instructions.
+
+- Open terminal and run the command `bash npm run dev`
+- Then open another terminal and run the command `bash npm run cypress`
 
 The above command will open storybook in a new browser tab where you can observe different components and their behavior
 
