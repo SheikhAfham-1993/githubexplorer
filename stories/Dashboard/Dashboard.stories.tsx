@@ -9,6 +9,18 @@ const userDataJson: IUserData = JSON.parse(JSON.stringify(userData))
 export default {
   title: 'Main/Dashboard',
   component: Dashboard,
+  parameters: {
+    mockData: [
+      {
+        url: 'https://api.github.com/graphql',
+        method: 'POST',
+        status: 200,
+        response: {
+          data: { data: { user: { userDataJson } } },
+        },
+      },
+    ],
+  },
 } as Meta
 
 export const WithUserData = {
