@@ -1,9 +1,9 @@
 import { Meta } from '@storybook/react'
-import SocialLinks from '../../components/UI/SocialLinks'
+import InfoTag from '../../components/UI/InfoTag'
 
 export default {
-  title: 'UI/SocialLinks',
-  component: SocialLinks,
+  title: 'UI/InfoTag',
+  component: InfoTag,
   tags: ['autodocs'],
   parameters: {
     docs: {

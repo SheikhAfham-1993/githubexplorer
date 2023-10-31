@@ -2,7 +2,7 @@ import UpdatedAt from './UpdatedAt'
 import Label from './Label'
 import { IRepositories } from '../../Interface/IOwner'
 import Link from 'next/link'
-import SocialLinks from './SocialLinks'
+import InfoTag from './InfoTag'
 import ColorCode from './ColorCode'
 
 type Props = {
@@ -48,12 +48,12 @@ const Card = ({ repo }: Props): React.JSX.Element => {
               />
             </div>
           )}
-          <SocialLinks
+          <InfoTag
             icon="stargazers"
             text={repo.stargazerCount.toString()}
             labelClassNames="w-full text-xs"
           />
-          <SocialLinks
+          <InfoTag
             icon="fork"
             text={repo.forkCount.toString()}
             labelClassNames="w-full text-xs"
