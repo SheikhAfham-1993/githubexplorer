@@ -1,9 +1,9 @@
 import { Meta } from '@storybook/react'
-import Avatar from '../../components/UI/Avatar'
+import UserAvatar from '../../components/UI/UserAvatar'
 
 export default {
-  title: 'UI/Avatar',
-  component: Avatar,
+  title: 'UI/UserAvatar',
+  component: UserAvatar,
   parameters: {
     docs: {
       description: {
