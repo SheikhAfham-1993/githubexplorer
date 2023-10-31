@@ -10,6 +10,11 @@ export default {
         disable: true,
       },
     },
+    dataCy: {
+      table: {
+        disable: true,
+      },
+    },
   },
   parameters: {
     docs: {
