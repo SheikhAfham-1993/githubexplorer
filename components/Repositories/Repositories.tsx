@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from 'react'
 import Label from '../UI/Label'
 import SearchResult from './SearchResult'
 import { IRepositories, IUserData } from '../../Interface/IOwner'
+import Input from '../UI/Input'
 
 type Props = {
   /** The data for the repositories. */
@@ -18,7 +19,7 @@ type Props = {
  * @return {React.JSX.Element} The rendered list of repositories.
  */
 const Repositories = ({ userData }: Props): React.JSX.Element => {
-  const filterRef = useRef<HTMLInputElement>(null)
+  const filterRef = useRef('')
   const [tempdata, setTempData] = useState<IRepositories[]>([])
 
   useEffect(() => {
@@ -32,6 +33,7 @@ const Repositories = ({ userData }: Props): React.JSX.Element => {
    * @return {void} No return value.
    */
   const setTempDataHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    filterRef.current = e.target.value
     setTempData(
       userData?.repositories?.nodes?.filter((repo) =>
         repo?.name?.includes(e.target.value)
@@ -43,7 +45,7 @@ const Repositories = ({ userData }: Props): React.JSX.Element => {
    * Clears the filter input and sets the temporary data to the user's repositories nodes, or an empty array if it is null.
    */
   const clearFilterHandler = () => {
-    if (filterRef.current) filterRef.current.value = ''
+    if (filterRef.current) filterRef.current = ''
     setTempData(userData?.repositories?.nodes ?? [])
   }
 
@@ -55,16 +57,14 @@ const Repositories = ({ userData }: Props): React.JSX.Element => {
             data-cy="user-repositories"
             className="border-b border-b-gray-300  pb-5"
           >
-            <input
+            <Input
               data-cy="find-repositories"
-              ref={filterRef}
               onChange={setTempDataHandler}
-              className="w-full md:w-3/4 border border-gray-400 py-1 px-3 rounded-lg placeholder:text-sm text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"
-              type="text"
+              width="w-full md:w-3/4"
               placeholder="Find a repository"
             />
           </div>
-          {filterRef.current?.value && (
+          {filterRef.current && (
             <SearchResult
               tempdata={tempdata}
               clearFilterHandler={clearFilterHandler}

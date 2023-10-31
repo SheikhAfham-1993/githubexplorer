@@ -2,6 +2,7 @@ import { fetchOwnerGraphql } from '../../util/fetchRepo'
 import useStore from '../../store/global'
 import Button from '../UI/Button'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import Input from '../UI/Input'
 
 type Props = {
   repoName: string
@@ -14,19 +15,17 @@ const SearchUserComponent = ({
   const { isLoading } = useStore()
   return (
     <>
-      <input
-        name="searchRepo"
-        data-cy="search-input"
-        defaultValue={repoName}
+      <Input
+        value={repoName}
         onChange={setRepoNameHandler}
+        data-cy="search-input"
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
             fetchOwnerGraphql(repoName)
           }
         }}
-        type="text"
         placeholder="Type repository name"
-        className="w-full md:w-[200px] border border-gray-400 py-1 px-3 rounded-lg placeholder:text-sm text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"
+        width="w-full md:w-[200px]"
       />
       <Button
         dataCy="search-button"
