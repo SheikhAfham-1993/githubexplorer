@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/react'
-import Avatar from '../../components/UI/avatar'
+import Avatar from '../../components/UI/Avatar'
 
 export default {
   title: 'UI/Avatar',

@@ -9,6 +9,7 @@ import useStore from '../../store/global'
 import Loader from '../UI/Loader'
 
 type Props = {
+  /** User data of the github user who owns the repositories. */
   userData: IUserData | undefined
 }
 
@@ -18,7 +19,9 @@ type Props = {
  * @returns {React.JSX.Element} The rendered Dashboard component.
  */
 const Dashboard = ({ userData }: Props): React.JSX.Element => {
+  // isLoading is the state which will be used when the data is being fetched
   const { isLoading } = useStore()
+
   return (
     <>
       <Header />

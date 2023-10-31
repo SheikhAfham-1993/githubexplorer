@@ -19,7 +19,7 @@ type Props = {
  *   - {ReactNode} children: The content to be displayed inside the button.
  *   - {function} onClick: The function to be called when the button is clicked.
  *   - {boolean} disabled: Determines if the button is disabled.
- *   - {string} dataCy: The data-cy attribute value for testing purposes.
+ *   - {string} dataCy?: The data-cy attribute value for testing purposes.
  *
  * @return {ReactElement} The rendered button component.
  */

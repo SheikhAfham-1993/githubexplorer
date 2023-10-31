@@ -1,6 +1,6 @@
 import { IUserData } from '../../Interface/IOwner'
 import Name from '../UI/Name'
-import Avatar from '..//UI/avatar'
+import Avatar from '../UI/Avatar'
 import Label from '../UI/Label'
 import InfoTag from '../UI/InfoTag'
 import { formatFigure } from '../../util/helpers'

@@ -8,14 +8,14 @@ import { IRepositories, IUserData } from '../../Interface/IOwner'
 import Input from '../UI/Input'
 
 type Props = {
-  /** The data for the repositories. */
+  /** The complete user data from where the repository data is extracted. */
   userData: IUserData
 }
 
 /**
  * Renders a list of repositories.
  *
- * @param {Props} userData - The data for the repositories.
+ * @param {Props} userData - The complete user data from where the repository data is extracted.
  * @return {React.JSX.Element} The rendered list of repositories.
  */
 const Repositories = ({ userData }: Props): React.JSX.Element => {
@@ -58,7 +58,7 @@ const Repositories = ({ userData }: Props): React.JSX.Element => {
             className="border-b border-b-gray-300  pb-5"
           >
             <Input
-              data-cy="find-repositories"
+              dataCy="find-repositories"
               onChange={setTempDataHandler}
               width="w-full md:w-3/4"
               placeholder="Find a repository"

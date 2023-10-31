@@ -1,3 +1,8 @@
+/**
+ * A small component that displays a loader.
+ *
+ * @return {JSX.Element} The loader component.
+ */
 const Loader = () => {
   return (
     <div className="w-full flex justify-center">
