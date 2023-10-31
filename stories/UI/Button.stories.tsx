@@ -7,7 +7,6 @@ export default {
   component: Button,
   tags: ['autodocs'],
   argTypes: {
-    // foo is the property we want to remove from the UI
     children: {
       table: {
         disable: true,

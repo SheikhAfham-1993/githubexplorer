@@ -5,10 +5,16 @@ export default {
   title: 'UI/Label',
   component: Label,
   argTypes: {
-    // foo is the property we want to remove from the UI
     className: {
       table: {
         disable: true,
+      },
+    },
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: 'The simple label component the reflects the text',
       },
     },
   },

@@ -5,8 +5,15 @@ export default {
   title: 'UI/SocialLinks',
   component: SocialLinks,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'The component that displays social links with an icon and text',
+      },
+    },
+  },
   argTypes: {
-    // foo is the property we want to remove from the UI
     labelClassNames: {
       table: {
         disable: true,
