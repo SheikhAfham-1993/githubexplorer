@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react'
 
-import Header from '../../components/Header'
+import Header from '../../components/Main/Header'
 
 export default {
   title: 'Main/Header',

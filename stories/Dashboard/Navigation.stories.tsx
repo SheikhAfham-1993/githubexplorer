@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react'
 
-import Navigation from '../../components/Navigation'
+import Navigation from '../../components/Main/Navigation'
 
 export default {
   title: 'Main/Navigation',

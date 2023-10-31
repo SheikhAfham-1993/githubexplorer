@@ -1,5 +1,5 @@
 import React from 'react'
-import Label from './UI/Label'
+import Label from '../UI/Label'
 import Image from 'next/image'
 /**
  * Renders the header component.

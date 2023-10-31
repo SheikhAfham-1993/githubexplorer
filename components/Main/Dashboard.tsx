@@ -1,6 +1,6 @@
 'use client'
-import Header from '../../components/Header'
-import Navigation from '../../components/Navigation'
+import Header from './Header'
+import Navigation from './Navigation'
 import ProfileDescription from '../../components/Bio/ProfileDescription'
 import Repositories from '../../components/Repositories/Repositories'
 import Label from '../UI/Label'
