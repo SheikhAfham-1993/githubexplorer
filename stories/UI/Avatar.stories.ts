@@ -7,7 +7,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'UI component to render an avatar image based on url',
+        component:
+          'UI component to render an avatar image based on url, change the viewport size to observe the avatar size for different screens',
       },
     },
   },

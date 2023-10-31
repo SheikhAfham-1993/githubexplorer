@@ -76,6 +76,12 @@ The project also has [Cypress E2E testing](https://www.cypress.io/) scripts. If 
 - If its your first time running the cypress test, cypress will configure the project. In this project cypress is already configured so you don't have to configure it again.
 - After running `npm run cypress`, a window will open. Select E2E testing and chrome as testing browser.
 
+If you want to run the tests on terminal and not via the cypress testing window, then run the below command
+
+`npm run cypress-headless`
+
+This start executing tests inside terminal window.
+
 In order to run the tests locally you must first run the application. By running the application cypress will detect it and start running E2E scripts. In the end you will find the result of the tests
 
 ## Improvments

@@ -10,7 +10,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "serve-storybook": "serve storybook-static",
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "cypress-headless": "cypress run --browser chrome"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
