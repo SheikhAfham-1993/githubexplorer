@@ -4,20 +4,25 @@ import {
   BookmarkSquareIcon,
   MagnifyingGlassIcon,
 } from '@heroicons/react/24/outline'
-import Button from './UI/Button'
+import Button from '../UI/Button'
 import { useState } from 'react'
-import { fetchOwnerGraphql } from '../util/fetchRepo'
-import Label from './UI/Label'
-import useStore from '../store/global'
+import { fetchOwnerGraphql } from '../../util/fetchRepo'
+import Label from '../UI/Label'
+import useStore from '../../store/global'
+import SearchUserComponent from './SearchUserCompnent'
 
 /**
- * Renders the navigation component.
+ * Renders the navigation component, where user can also search for a github user.
  *
  * @return {React.JSX.Element} The rendered navigation component.
  */
 const Navigation = (): React.JSX.Element => {
   const [repoName, setRepoName] = useState<string>('')
   const { isLoading } = useStore()
+
+  const setRepoNameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setRepoName(e.target.value.trim())
+  }
   return (
     <div
       data-cy="navigation-row"
@@ -45,7 +50,11 @@ const Navigation = (): React.JSX.Element => {
         data-cy="search-input-container"
         className="w-full flex flex-row items-center space-x-2"
       >
-        <input
+        <SearchUserComponent
+          repoName={repoName}
+          setRepoNameHandler={setRepoNameHandler}
+        />
+        {/* <input
           name="searchRepo"
           data-cy="search-input"
           defaultValue={repoName}
@@ -66,7 +75,7 @@ const Navigation = (): React.JSX.Element => {
           classNames="bg-green-600 disabled:bg-green-600/50 px-3 py-1 rounded-lg text-white text-sm font-semibold flex items-center"
         >
           <MagnifyingGlassIcon className="h-5 w-5" /> Search
-        </Button>
+        </Button> */}
       </div>
     </div>
   )
