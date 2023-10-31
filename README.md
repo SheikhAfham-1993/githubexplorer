@@ -86,7 +86,11 @@ In order to run the tests locally you must first run the application. By running
 
 ## Improvments
 
-There is a lot of potential to improve this project, e.g. right now user can only search for any repository via typing the name of the repository. More option to find a repository via language can also be introduced.
+Some minor features which will improve this project, e.g. right now user can only search for any repository via typing the name of the repository. More option to find a repository via language can also be introduced.
+
+Also, the tests are E2E, Cypress can also test the components. This feature will really make this project more stable when component testing are also included.
+
+Moreover storybook also is a form of component testing, if used in an advance way the whole team can make use of this framework to deliver the best UI/UX experience.
 
 This project has various Github actions to automate various tasks for e.g.
 
