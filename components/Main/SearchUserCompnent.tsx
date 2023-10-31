@@ -5,9 +5,19 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import Input from '../UI/Input'
 
 type Props = {
+  /** The name of the repository. */
   repoName: string
+  /** The function to handle changes in the repository name. */
   setRepoNameHandler: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
+
+/**
+ * Renders the SearchUserComponent.
+ *
+ * @param {string} repoName - The name of the repository.
+ * @param {function} setRepoNameHandler - The function to handle changes in the repository name.
+ * @returns {React.JSX.Element} - The rendered SearchUserComponent.
+ */
 const SearchUserComponent = ({
   repoName,
   setRepoNameHandler,
@@ -18,7 +28,7 @@ const SearchUserComponent = ({
       <Input
         value={repoName}
         onChange={setRepoNameHandler}
-        data-cy="search-input"
+        dataCy="search-input"
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
             fetchOwnerGraphql(repoName)

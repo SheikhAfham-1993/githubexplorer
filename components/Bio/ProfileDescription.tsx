@@ -1,12 +1,12 @@
 import { IUserData } from '../../Interface/IOwner'
 import Name from '../UI/Name'
-import Avatar from '..//UI/avatar'
+import UserAvatar from '../UI/UserAvatar'
 import Label from '../UI/Label'
 import InfoTag from '../UI/InfoTag'
 import { formatFigure } from '../../util/helpers'
 
 type Props = {
-  /** The data of the owner. */
+  /** The data of the owner the user fetched. */
   userData: IUserData | undefined
 }
 
@@ -26,7 +26,7 @@ const ProfileDescription = ({ userData }: Props): React.JSX.Element => {
         data-cy="profile-avatar"
         className="flex flex-row md:flex-col space-x-4 md:space-x-0 space-y-0 md:space-y-4"
       >
-        <Avatar ownerAvatar={userData?.avatarUrl} />
+        <UserAvatar ownerAvatar={userData?.avatarUrl} />
         <Name ownerName={userData?.name} ownerLogin={userData?.login} />
       </div>
       <div className="pt-1">

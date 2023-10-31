@@ -7,7 +7,7 @@ type Props = {
   ownerLogin?: string
 }
 /**
- * Renders the name of the owner.
+ * Renders the name and github userid of the owner. It wont display the tag if any of the values are empty.
  *
  * @param {string} ownerLogin - The git user id of the owner.
  * @param {string} ownerName - The name of the owner.

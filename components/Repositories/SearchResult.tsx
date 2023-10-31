@@ -3,18 +3,18 @@ import Label from '../UI/Label'
 import { IRepositories } from '../../Interface/IOwner'
 
 type Props = {
-  /** The data to be rendered in the component. */
+  /** The filtered list that is returned after searching for the repository. */
   tempdata: IRepositories[] | undefined
   /** The handler function for clearing the filter. */
   clearFilterHandler: () => void
 }
 
 /**
- * Renders the search result component.
+ * Renders the text where it shows how many results are there alongside with clear filter button.
  *
- * @param {Props} tempdata - The temporary data for the search result.
+ * @param {Props} tempdata - The filtered list that is returned after searching for the repository.
  * @param {Function} clearFilterHandler - The handler function for clearing the filter.
- * @return {React.JSX.Element} The rendered search result component.
+ * @return {React.JSX.Element} Renders the text where it shows how many results are there alongside with clear filter button.
  */
 
 const SearchResult = ({

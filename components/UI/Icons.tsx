@@ -1,6 +1,6 @@
 import Image from 'next/image'
 type Props = {
-  /** The name of the social icon such as 'location', 'youtube', 'linkedin', 'website', 'stargazers', 'fork', 'follower' . */
+  /** The name of the icon such as 'location', 'youtube', 'linkedin', 'website', 'stargazers', 'fork', 'follower' . */
   icon: string
 }
 
@@ -11,7 +11,7 @@ type Props = {
  * @return {React.JSX.Element} The generated social icon element.
  */
 
-const SocialIcons = ({ icon }: Props): React.JSX.Element => {
+const Icons = ({ icon }: Props): React.JSX.Element => {
   let iconSvg: string = ''
   switch (icon.toLowerCase()) {
     case 'location':
@@ -45,4 +45,4 @@ const SocialIcons = ({ icon }: Props): React.JSX.Element => {
   )
 }
 
-export default SocialIcons
+export default Icons

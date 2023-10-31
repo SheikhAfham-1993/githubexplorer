@@ -8,7 +8,7 @@ type Props = {
 }
 
 /**
- * Renders a label component with the given text and styling.
+ * Renders a label component with the given text and styling. It returns empty fragment when text is undefined.
  *
  * @param {string} className - The class name for the label component.
  * @param {string} text - The text to be displayed in the label.

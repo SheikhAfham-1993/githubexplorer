@@ -6,6 +6,7 @@ import userData from '../assets/userData.json'
 
 const userDataJson: IUserData = JSON.parse(JSON.stringify(userData))
 
+// The main component of the Github explorer page.
 export default {
   title: 'Main/Dashboard',
   component: Dashboard,

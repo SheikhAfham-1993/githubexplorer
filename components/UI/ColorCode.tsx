@@ -4,10 +4,10 @@ type Props = {
 }
 
 /**
- * Renders the ColorCode component.
+ * The rendered ColorCode component, if no color then return empty fragment.
  *
  * @param {Props} code - The color code prop.
- * @return {React.JSX.Element} The rendered ColorCode component.
+ * @return {React.JSX.Element} The rendered ColorCode component, if no color then return empty fragment.
  */
 
 const ColorCode = ({ code }: Props): React.JSX.Element => {
