@@ -32,6 +32,14 @@ export default {
   title: 'Main/ProfileDescription',
   component: ProfileDescription,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'The profile description section where all the data related to the owner is displayed',
+      },
+    },
+  },
 } as Meta
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args

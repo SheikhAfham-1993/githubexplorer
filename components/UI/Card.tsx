@@ -40,6 +40,7 @@ const Card = ({ repo }: Props): React.JSX.Element => {
         <div className="flex flex-row items-center space-x-4">
           {repo.languages?.nodes && repo.languages?.nodes.length > 0 && (
             <div className="flex flex-row items-center space-x-1">
+              {/* this is coded with styles because tailwind doesn't support color codes in runtime */}
               <ColorCode code={repo.languages?.nodes[0]?.color} />
               <Label
                 className="text-xs text-gray-600"

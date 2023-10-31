@@ -10,6 +10,12 @@ export default {
   title: 'Main/Dashboard',
   component: Dashboard,
   parameters: {
+    docs: {
+      description: {
+        component:
+          'Overall dashboard page, where you can search for the owner of a repository.',
+      },
+    },
     mockData: [
       {
         url: 'https://api.github.com/graphql',
