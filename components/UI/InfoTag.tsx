@@ -2,7 +2,7 @@ import Label from './Label'
 import SocialIcons from './SocialIcons'
 
 type Props = {
-  /** The icon for the social link. */
+  /** The icon for the social link  such as 'location', 'youtube', 'linkedin', 'website', 'stargazers', 'fork', 'follower' */
   icon: string
   /** The text for the social link. */
   text: string
@@ -14,12 +14,12 @@ type Props = {
  * Renders a component that displays social links with an icon and text.
  *
  * @param {object} props - The props object.
- * @param {string} props.icon - The icon for the social link.
+ * @param {string} props.icon - The icon for the social link  such as 'location', 'youtube', 'linkedin', 'website', 'stargazers', 'fork', 'follower'.
  * @param {string} props.text - The text for the social link.
  * @param {string} [props.labelClassNames='w-full text-sm'] - The class names for the label component.
  * @returns {React.JSX.Element} The rendered social links component.
  */
-const SocialLinks = ({
+const InfoTag = ({
   icon,
   text,
   labelClassNames = 'w-full text-sm',
@@ -32,4 +32,4 @@ const SocialLinks = ({
   )
 }
 
-export default SocialLinks
+export default InfoTag

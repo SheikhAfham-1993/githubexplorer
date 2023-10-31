@@ -2,7 +2,7 @@ import { IUserData } from '../../Interface/IOwner'
 import Name from '../UI/Name'
 import Avatar from '..//UI/avatar'
 import Label from '../UI/Label'
-import SocialLinks from '../UI/SocialLinks'
+import InfoTag from '../UI/InfoTag'
 import { formatFigure } from '../../util/helpers'
 
 type Props = {
@@ -38,7 +38,7 @@ const ProfileDescription = ({ userData }: Props): React.JSX.Element => {
       </div>
 
       <div data-cy="profile-followers" className="pt-1 flex flex-row space-x-2">
-        <SocialLinks
+        <InfoTag
           icon="follower"
           text={`${formatFigure(
             userData?.followers.totalCount ?? 0
@@ -53,11 +53,11 @@ const ProfileDescription = ({ userData }: Props): React.JSX.Element => {
 
       <div data-cy="profile-social" className="flex flex-col space-y-1">
         {userData?.location && (
-          <SocialLinks icon="LOCATION" text={userData?.location} />
+          <InfoTag icon="LOCATION" text={userData?.location} />
         )}
 
         {userData?.socialAccounts?.nodes?.map((account, index) => (
-          <SocialLinks
+          <InfoTag
             key={index}
             icon={account?.provider}
             text={account?.displayName}
