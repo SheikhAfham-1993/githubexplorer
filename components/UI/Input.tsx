@@ -30,7 +30,7 @@ const Input = ({
     <input
       data-cy={dataCy}
       name="searchRepo"
-      defaultValue={value}
+      value={value}
       onChange={onChange}
       onKeyDown={onKeyDown}
       type="text"

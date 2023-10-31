@@ -29,12 +29,8 @@ const ProfileDescription = ({ userData }: Props): React.JSX.Element => {
         <UserAvatar ownerAvatar={userData?.avatarUrl} />
         <Name ownerName={userData?.name} ownerLogin={userData?.login} />
       </div>
-      <div className="pt-1">
-        <Label
-          dataCy="profile-bio"
-          className="w-full md:w-[300px]"
-          text={userData?.bio}
-        />
+      <div className="pt-1 pr-3">
+        <Label dataCy="profile-bio" className="w-full" text={userData?.bio} />
       </div>
 
       <div data-cy="profile-followers" className="pt-1 flex flex-row space-x-2">
