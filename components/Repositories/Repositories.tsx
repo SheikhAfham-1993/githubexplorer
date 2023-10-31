@@ -1,7 +1,7 @@
 'use client'
 
 import Card from '../UI/Card'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Label from '../UI/Label'
 import SearchResult from './SearchResult'
 import { IRepositories, IUserData } from '../../Interface/IOwner'
@@ -19,8 +19,8 @@ type Props = {
  * @return {React.JSX.Element} The rendered list of repositories.
  */
 const Repositories = ({ userData }: Props): React.JSX.Element => {
-  const filterRef = useRef('')
   const [tempdata, setTempData] = useState<IRepositories[]>([])
+  const [filterText, setFilterText] = useState('')
 
   useEffect(() => {
     setTempData(userData.repositories?.nodes ?? [])
@@ -33,7 +33,7 @@ const Repositories = ({ userData }: Props): React.JSX.Element => {
    * @return {void} No return value.
    */
   const setTempDataHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    filterRef.current = e.target.value
+    setFilterText(e.target.value)
     setTempData(
       userData?.repositories?.nodes?.filter((repo) =>
         repo?.name?.toLowerCase().includes(e.target.value.toLowerCase())
@@ -45,7 +45,7 @@ const Repositories = ({ userData }: Props): React.JSX.Element => {
    * Clears the filter input and sets the temporary data to the user's repositories nodes, or an empty array if it is null.
    */
   const clearFilterHandler = () => {
-    if (filterRef.current) filterRef.current = ''
+    if (filterText) setFilterText('')
     setTempData(userData?.repositories?.nodes ?? [])
   }
 
@@ -62,9 +62,10 @@ const Repositories = ({ userData }: Props): React.JSX.Element => {
               onChange={setTempDataHandler}
               width="w-full md:w-3/4"
               placeholder="Find a repository"
+              value={filterText}
             />
           </div>
-          {filterRef.current && (
+          {filterText && (
             <SearchResult
               tempdata={tempdata}
               clearFilterHandler={clearFilterHandler}

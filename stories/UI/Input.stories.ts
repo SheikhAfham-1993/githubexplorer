@@ -44,6 +44,13 @@ export default {
   },
 } as Meta
 
+export const Input_Empty = {
+  args: {
+    width: 'w-[200px]',
+    value: '',
+  },
+}
+
 export const Input_SearchRepo = {
   args: {
     width: 'w-[200px]',
