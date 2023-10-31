@@ -6,7 +6,7 @@ import InfoTag from '../UI/InfoTag'
 import { formatFigure } from '../../util/helpers'
 
 type Props = {
-  /** The data of the owner. */
+  /** The data of the owner the user fetched. */
   userData: IUserData | undefined
 }
 
