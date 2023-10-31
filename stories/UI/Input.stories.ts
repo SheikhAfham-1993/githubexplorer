@@ -13,11 +13,6 @@ export default {
     },
   },
   argTypes: {
-    'data-cy': {
-      table: {
-        disable: true,
-      },
-    },
     onChange: {
       table: {
         disable: true,
@@ -34,6 +29,11 @@ export default {
       },
     },
     value: {
+      table: {
+        disable: true,
+      },
+    },
+    dataCy: {
       table: {
         disable: true,
       },

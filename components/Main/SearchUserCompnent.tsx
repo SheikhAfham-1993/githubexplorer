@@ -34,8 +34,8 @@ const SearchUserComponent = ({
             fetchOwnerGraphql(repoName)
           }
         }}
-        placeholder="Type repository name"
-        width="w-full md:w-[200px]"
+        placeholder="Type user (e.g. sheikhafham-1993)"
+        width="w-full md:w-[250px]"
       />
       <Button
         dataCy="search-button"
