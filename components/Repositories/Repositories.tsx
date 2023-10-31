@@ -36,7 +36,7 @@ const Repositories = ({ userData }: Props): React.JSX.Element => {
     filterRef.current = e.target.value
     setTempData(
       userData?.repositories?.nodes?.filter((repo) =>
-        repo?.name?.includes(e.target.value)
+        repo?.name?.toLowerCase().includes(e.target.value.toLowerCase())
       ) ?? []
     )
   }

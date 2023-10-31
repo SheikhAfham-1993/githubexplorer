@@ -1,0 +1,29 @@
+{
+  "forkCount": 30,
+  "stargazerCount": 40,
+  "pushedAt": "2023-10-28T18:26:58Z",
+  "name": "githubexplorer",
+  "url": "https://github.com/SheikhAfham-1993/githubexplorer",
+  "visibility": "PUBLIC",
+  "description": "Next js application to explore the repositories of a user",
+  "languages": {
+    "nodes": [
+      {
+        "color": "#3572A5",
+        "name": "TypeScript"
+      },
+      {
+        "color": "#f1e05a",
+        "name": "CSS"
+      },
+      {
+        "color": "#f1e05a",
+        "name": "JavaScript"
+      },
+      {
+        "color": "#888888",
+        "name": "MDX"
+      }
+    ]
+  }
+}

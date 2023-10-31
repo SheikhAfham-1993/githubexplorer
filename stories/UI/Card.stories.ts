@@ -1,60 +1,8 @@
 import { Meta } from '@storybook/react'
 import Card from '../../components/UI/Card'
-
-const repo_c9s = {
-  forkCount: 10,
-  stargazerCount: 20,
-  pushedAt: '2011-02-13T15:01:40Z',
-  name: 'git-local',
-  url: 'https://github.com/c9s/git-local',
-  visibility: 'PUBLIC',
-  description: null,
-  languages: {
-    nodes: [],
-  },
-}
-const repo_afham = {
-  forkCount: 30,
-  stargazerCount: 40,
-  pushedAt: '2023-10-28T18:26:58Z',
-  name: 'githubexplorer',
-  url: 'https://github.com/SheikhAfham-1993/githubexplorer',
-  visibility: 'PUBLIC',
-  description: 'Next js application to explore the repositories of a user',
-  languages: {
-    nodes: [
-      {
-        name: 'CSS',
-      },
-      {
-        name: 'TypeScript',
-      },
-      {
-        name: 'JavaScript',
-      },
-      {
-        name: 'MDX',
-      },
-    ],
-  },
-}
-
-const postModern = {
-  forkCount: 0,
-  stargazerCount: 0,
-  pushedAt: '2012-04-25T01:33:44Z',
-  name: 'scm',
-  url: 'https://github.com/postmodern/scm',
-  visibility: 'PUBLIC',
-  description: 'Ruby interface to common SCMs',
-  languages: {
-    nodes: [
-      {
-        name: 'Ruby',
-      },
-    ],
-  },
-}
+import repo_afham from '../assets/repo_afham.json'
+import repo_c9s from '../assets/repo_c9s.json'
+import repo_modern from '../assets/repo_modern.json'
 
 export default {
   title: 'UI/Card',
@@ -73,7 +21,7 @@ export default {
       mapping: {
         c9s: repo_c9s,
         afham: repo_afham,
-        postModern: postModern,
+        postModern: repo_modern,
       },
     },
   },

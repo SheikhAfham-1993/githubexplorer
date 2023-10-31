@@ -1,0 +1,17 @@
+{
+  "forkCount": 0,
+  "stargazerCount": 0,
+  "pushedAt": "2012-04-25T01:33:44Z",
+  "name": "scm",
+  "url": "https://github.com/postmodern/scm",
+  "visibility": "PUBLIC",
+  "description": "Ruby interface to common SCMs",
+  "languages": {
+    "nodes": [
+      {
+        "color": "#701516",
+        "name": "Ruby"
+      }
+    ]
+  }
+}
