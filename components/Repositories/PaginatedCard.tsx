@@ -33,10 +33,6 @@ const PaginatedCard = ({
   endOffset,
   pageCount,
 }: Props): JSX.Element => {
-  console.log({
-    itemOffset,
-    endOffset,
-  })
   const returnPrevNextTag = (text: string) => {
     return (
       <div className="px-3 flex items-center justify-center hover:text-blue-600 hover:underline">
