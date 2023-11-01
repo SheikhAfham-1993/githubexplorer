@@ -49,6 +49,7 @@ const PaginatedCard = ({
       </div>
       <ReactPaginate
         breakLabel="..."
+        breakClassName="hidden"
         nextLabel="Next >"
         className="flex justify-center items-center space-x-2"
         activeClassName="bg-blue-600 text-white hover:text-white"
