@@ -51,14 +51,10 @@ const PaginatedCard = ({
         breakLabel="..."
         nextLabel={returnPrevNextTag('Next >')}
         className="flex justify-center items-center space-x-2"
-        activeClassName="hidden"
-        pageClassName="hidden"
+        activeClassName="bg-blue-600 text-white hover:text-white"
+        pageClassName="w-6 h-6 text-xs flex items-center justify-center hover:text-blue-600 hover:underline rounded-lg"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={0}
-        pageLinkClassName="hidden"
-        pageLabelBuilder={() => {
-          return null
-        }}
+        pageRangeDisplayed={5}
         pageCount={pageCount}
         previousLabel={returnPrevNextTag('< Previous')}
         renderOnZeroPageCount={null}
