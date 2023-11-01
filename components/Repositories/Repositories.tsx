@@ -1,11 +1,11 @@
 'use client'
 
+import Card from '../UI/Card'
 import { useState, useEffect } from 'react'
 import Label from '../UI/Label'
 import SearchResult from './SearchResult'
 import { IRepositories, IUserData } from '../../Interface/IOwner'
 import Input from '../UI/Input'
-import PaginatedCard from './PaginatedCard'
 
 type Props = {
   /** The complete user data from where the repository data is extracted. */
@@ -19,18 +19,8 @@ type Props = {
  * @return {React.JSX.Element} The rendered list of repositories.
  */
 const Repositories = ({ userData }: Props): React.JSX.Element => {
-  let itemsPerPage = 8
   const [tempdata, setTempData] = useState<IRepositories[]>([])
   const [filterText, setFilterText] = useState('')
-  const [itemOffset, setItemOffset] = useState(0)
-  const endOffset = itemOffset + itemsPerPage
-  const pageCount = Math.ceil(tempdata.length / itemsPerPage)
-
-  // Invoke when user click to request another page.
-  const handlePageClick = (event: { selected: number }) => {
-    const newOffset = (event.selected * itemsPerPage) % tempdata.length
-    setItemOffset(newOffset)
-  }
 
   useEffect(() => {
     setTempData(userData.repositories?.nodes ?? [])
@@ -43,7 +33,6 @@ const Repositories = ({ userData }: Props): React.JSX.Element => {
    * @return {void} No return value.
    */
   const setTempDataHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setItemOffset(0)
     setFilterText(e.target.value)
     setTempData(
       userData?.repositories?.nodes?.filter((repo) =>
@@ -82,13 +71,13 @@ const Repositories = ({ userData }: Props): React.JSX.Element => {
               clearFilterHandler={clearFilterHandler}
             />
           )}
-          <PaginatedCard
-            tempdata={tempdata}
-            handlePageClick={handlePageClick}
-            itemOffset={itemOffset}
-            endOffset={endOffset}
-            pageCount={pageCount}
-          />
+          {tempdata?.length > 0 && (
+            <div data-cy="repositories-card-list" className="pb-5">
+              {tempdata.map((repo, index) => (
+                <Card key={index} repo={repo} />
+              ))}
+            </div>
+          )}
           {tempdata?.length === 0 && (
             <Label
               dataCy="no-repositories-found"
