@@ -13,6 +13,8 @@ type Props = {
   endOffset: number
   /** The total number of pages. */
   pageCount: number
+  /** Total item to show per page */
+  itemsPerPage: number
 }
 
 /**
@@ -23,6 +25,7 @@ type Props = {
  * @param {number} itemOffset - The offset of the first item to be displayed.
  * @param {number} endOffset - The offset of the last item to be displayed.
  * @param {number} pageCount - The total number of pages.
+ * @param {number} itemsPerPage -Total item to show per page
  * @return {JSX.Element} The paginated card component.
  */
 
@@ -32,6 +35,7 @@ const PaginatedCard = ({
   itemOffset,
   endOffset,
   pageCount,
+  itemsPerPage,
 }: Props): JSX.Element => {
   const returnPrevNextTag = (text: string) => {
     return (
@@ -47,18 +51,20 @@ const PaginatedCard = ({
           <Card key={index} repo={repo} />
         ))}
       </div>
-      <ReactPaginate
-        breakLabel=""
-        nextLabel={returnPrevNextTag('Next >')}
-        className="flex justify-center items-center space-x-2"
-        activeClassName="hidden"
-        pageClassName="hidden"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={undefined}
-        pageCount={pageCount}
-        previousLabel={returnPrevNextTag('< Previous')}
-        renderOnZeroPageCount={() => null}
-      />
+      {tempdata?.length > itemsPerPage && (
+        <ReactPaginate
+          breakLabel=""
+          nextLabel={returnPrevNextTag('Next >')}
+          className="flex justify-center items-center space-x-2"
+          activeClassName="hidden"
+          pageClassName="hidden"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={undefined}
+          pageCount={pageCount}
+          previousLabel={returnPrevNextTag('< Previous')}
+          renderOnZeroPageCount={() => null}
+        />
+      )}
     </>
   )
 }
