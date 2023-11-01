@@ -82,7 +82,6 @@ const Repositories = ({ userData }: Props): React.JSX.Element => {
               clearFilterHandler={clearFilterHandler}
             />
           )}
-          {/* pagination component */}
           <PaginatedCard
             tempdata={tempdata}
             handlePageClick={handlePageClick}
