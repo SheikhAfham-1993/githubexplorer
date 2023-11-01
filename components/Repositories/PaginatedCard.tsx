@@ -49,14 +49,14 @@ const PaginatedCard = ({
       </div>
       <ReactPaginate
         breakLabel="..."
-        nextLabel={returnPrevNextTag('Next >')}
-        className="flex justify-center items-center space-x-2 hidden"
+        nextLabel="Next >"
+        className="flex justify-center items-center space-x-2"
         activeClassName="bg-blue-600 text-white hover:text-white"
         pageClassName="w-6 h-6 text-xs flex items-center justify-center hover:text-blue-600 hover:underline rounded-lg"
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
         pageCount={pageCount}
-        previousLabel={returnPrevNextTag('< Previous')}
+        previousLabel="< Previous"
         renderOnZeroPageCount={null}
       />
     </>
