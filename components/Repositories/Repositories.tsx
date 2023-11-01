@@ -88,6 +88,7 @@ const Repositories = ({ userData }: Props): React.JSX.Element => {
             itemOffset={itemOffset}
             endOffset={endOffset}
             pageCount={pageCount}
+            itemsPerPage={itemsPerPage}
           />
           {tempdata?.length === 0 && (
             <Label
