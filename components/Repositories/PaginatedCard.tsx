@@ -58,7 +58,6 @@ const PaginatedCard = ({
         pageRangeDisplayed={undefined}
         pageCount={pageCount}
         previousLabel="< Previous"
-        renderOnZeroPageCount={null}
       />
     </>
   )
